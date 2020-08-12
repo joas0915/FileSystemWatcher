@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[4.7.0, )"
             },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
+            },
             "System.Diagnostics.EventLog": {
               "target": "Package",
               "version": "[4.7.0, )"

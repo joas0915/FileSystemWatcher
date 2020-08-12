@@ -5,7 +5,9 @@ using System.Security.Principal;
 using System.Text;
 using System.Timers;
 using System.Diagnostics.Eventing;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace SSFSW
 {
@@ -52,10 +54,24 @@ namespace SSFSW
         }
         static void InsertEventLog()
         {
-            //string FoldertoSearch = "Tester_5.txt";
-            string FoldertoSearch = "TesterFolder";
+            /////  EventLog Parameter   /////
+            string FoldertoSearch = @"C:\TesterFolder";
+            string LogCheckTime = "";
+            string ID = "";
+            string Login_ID = "";
+            string UserName= "";
+            string PCName = "";
+            string Subject= "";
+            string IPAddress= "";
+            string Port= "";
+            string Path= "";
+            string FilePath= "";
+            string FileName= "";
+            string Type= "";
             string AccessType = "";
-            string AccessTypeReason = "";
+            string Reason = "";
+            string CreateTime= "";
+            string Information = "";
             StringBuilder sb = new StringBuilder();
             const string queryString = @"<QueryList>
                                           <Query Id=""0"" Path=""Security"">
@@ -66,83 +82,126 @@ namespace SSFSW
             eventsQuery.ReverseDirection = true;
             EventLogReader logReader = new EventLogReader(eventsQuery);
             bool isStop = false;
+            int m_index = 0;
+            /////  EventLog Parameter   /////
+
+            /////  DBConnect Parameter   /////
+            string g_ConnectionStr = @"Data Source=192.168.10.230,7100;Initial Catalog=arcon;Integrated Security=False;User ID=arconsa;Password=arconsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
+            //string SQL_CONNSTR = @"Network Library=DBMSSOCN;Data Source=192.168.10.230,7100;Initial Catalog=OTP_TEST_DB;User Id=arconsa;Password=arconsa@pass0";
+
+            SqlConnection sqlCon = new SqlConnection(g_ConnectionStr);
+            SqlCommand sqlCmd = new SqlCommand();
+            /////  DBConnect Parameter   /////
+
             for (EventRecord eventInstance = logReader.ReadEvent(); null != eventInstance; eventInstance = logReader.ReadEvent())
             {
                 foreach (var VARIABLE in eventInstance.Properties)
-                    //Console.WriteLine(eventInstance.Properties[7].ToString().Contains(FoldertoSearch));
-                    if (VARIABLE.Value.ToString().ToLower().Contains(FoldertoSearch.ToLower()))
+                {
+                    try
                     {
-                        AccessType = eventInstance.Properties[11].Value.ToString();
-                        AccessType = AccessType.Replace("\r","");
-                        AccessType = AccessType.Replace("\t", "");
-                        AccessType = AccessType.Replace("%%4416", "ReadData (또는 ListDirectory)");
-                        AccessType = AccessType.Replace("%%4417", "WriteData (또는 AddFile)");
-                        AccessType = AccessType.Replace("%%4418", "AppendData (또는 AddSubdirectory 디렉터리 또는 CreatePipeInstance)");
-                        AccessType = AccessType.Replace("%%4419", "ReadEA(레지스트리 개체의 경우 '하위 키 열거'입니다.)");
-                        AccessType = AccessType.Replace("%%4420", "WriteEA");
-                        AccessType = AccessType.Replace("%%4421", "DeleteChild");
-                        AccessType = AccessType.Replace("%%4423", "ReadAttributes");
-                        AccessType = AccessType.Replace("%%4424", "WriteAttributes");
-                        AccessType = AccessType.Replace("%%1537", "DELETE");
-                        AccessType = AccessType.Replace("%%1538", "READ_CONTROL");
-                        AccessType = AccessType.Replace("%%1539", "WRITE_DAC");
-                        AccessType = AccessType.Replace("%%1540", "WRITE_OWNER");
-                        AccessType = AccessType.Replace("%%1541", "항목과");
-                        AccessType = AccessType.Replace("%%1542", "ACCESS_SYS_SEC");
+                        if (!VARIABLE.Value.ToString().Contains(FoldertoSearch) && (eventInstance.TaskDisplayName.ToString() == "File System" || eventInstance.TaskDisplayName.ToString() == "Detailed File Share"))
+                        {
+                            //내 PC에서 조작한경우
+                            if (eventInstance.Id.ToString() == "4656")
+                            {
+                                if (eventInstance.Properties[6].Value.ToString().Replace(@"C:\TesterFolder", "").Length != 0)
+                                {
+                                    m_index++;
+                                    LogCheckTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    ID = eventInstance.Id.ToString();
+                                    UserName = eventInstance.Properties[1].Value.ToString();
+                                    PCName = eventInstance.Properties[2].Value.ToString();
+                                    Login_ID = eventInstance.Properties[3].Value.ToString();
+                                    Information = eventInstance.Properties[4].Value.ToString();
+                                    Subject = eventInstance.Properties[5].Value.ToString();
+                                    IPAddress = "";
+                                    Port = "";
+                                    Path = "";
+                                    FilePath = eventInstance.Properties[6].Value.ToString();
+                                    FileName = "";
+                                    Type = "";
+                                    AccessType = DataReplace(eventInstance.Properties[9].Value.ToString());
+                                    Reason = DataReplace(eventInstance.Properties[10].Value.ToString());
+                                    CreateTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
 
-                        AccessTypeReason = eventInstance.Properties[12].Value.ToString();
-                        AccessTypeReason = AccessTypeReason.Replace("\r", "");
-                        AccessTypeReason = AccessTypeReason.Replace("\t", "");
-                        AccessTypeReason = AccessTypeReason.Replace("%%4416", "ReadData (또는 ListDirectory)");
-                        AccessTypeReason = AccessTypeReason.Replace("%%4417", "WriteData (또는 AddFile)");
-                        AccessTypeReason = AccessTypeReason.Replace("%%4418", "AppendData (또는 AddSubdirectory 디렉터리 또는 CreatePipeInstance)");
-                        AccessTypeReason = AccessTypeReason.Replace("%%4419", "ReadEA(레지스트리 개체의 경우 '하위 키 열거'입니다.)");
-                        AccessTypeReason = AccessTypeReason.Replace("%%4420", "WriteEA");
-                        AccessTypeReason = AccessTypeReason.Replace("%%4421", "DeleteChild");
-                        AccessTypeReason = AccessTypeReason.Replace("%%4423", "ReadAttributes");
-                        AccessTypeReason = AccessTypeReason.Replace("%%4424", "WriteAttributes");
-                        AccessTypeReason = AccessTypeReason.Replace("%%1537", "DELETE");
-                        AccessTypeReason = AccessTypeReason.Replace("%%1538", "READ_CONTROL");
-                        AccessTypeReason = AccessTypeReason.Replace("%%1539", "WRITE_DAC");
-                        AccessTypeReason = AccessTypeReason.Replace("%%1540", "WRITE_OWNER");
-                        AccessTypeReason = AccessTypeReason.Replace("%%1541", "항목과");
-                        AccessTypeReason = AccessTypeReason.Replace("%%1542", "ACCESS_SYS_SEC");
+                                    Console.WriteLine("==============================================================");
+                                    Console.WriteLine("Check " + LogCheckTime);
+                                    Console.WriteLine("ID : " + ID);
+                                    Console.WriteLine("User : " + UserName);
+                                    Console.WriteLine("PC Name : " + PCName);
+                                    Console.WriteLine("Login_ID : " + Login_ID);
+                                    Console.WriteLine("Information : " + Information);
+                                    Console.WriteLine("Subject : " + Subject);
+                                    Console.WriteLine("FilePath : " + FilePath);
+                                    Console.WriteLine("AccessType : \n" + AccessType);
+                                    Console.WriteLine("Reason : \n" + Reason);
+                                    Console.WriteLine("CreateTime: " + CreateTime);
+                                }
+                            }
+                            //원격에서 접속해서 조작한 경우
+                            if (eventInstance.Id.ToString() == "5145")
+                            {
+                                if (eventInstance.Properties[9].Value.ToString().Replace("\\", "").Length != 0 && eventInstance.Properties[4].Value.ToString() == "File")
+                                {
+                                    m_index++;
+                                    LogCheckTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    ID = eventInstance.Id.ToString();
+                                    UserName = eventInstance.Properties[1].Value.ToString();
+                                    PCName = eventInstance.Properties[2].Value.ToString();
+                                    Login_ID = eventInstance.Properties[3].Value.ToString();
+                                    Information = "";
+                                    Subject = eventInstance.Properties[4].Value.ToString();
+                                    IPAddress = eventInstance.Properties[5].Value.ToString();
+                                    Port = eventInstance.Properties[6].Value.ToString();
+                                    Path = eventInstance.Properties[7].Value.ToString();
+                                    FilePath = eventInstance.Properties[8].Value.ToString();
+                                    FileName = eventInstance.Properties[9].Value.ToString();
+                                    Type = eventInstance.Properties[10].Value.ToString();
+                                    AccessType = DataReplace(eventInstance.Properties[11].Value.ToString());
+                                    Reason = DataReplace(eventInstance.Properties[12].Value.ToString());
+                                    CreateTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
 
-                        Console.WriteLine("==============================================================");
-                        Console.WriteLine("Check " + DateTime.Now.ToString());
-                        Console.WriteLine("ID " + eventInstance.Id.ToString());
-                        Console.WriteLine("User : " + eventInstance.Properties[1].Value);
-                        Console.WriteLine("PC Name : " + eventInstance.Properties[2].Value);
-                        Console.WriteLine("Type : " + eventInstance.Properties[4].Value);
-                        Console.WriteLine("IP Address : " + eventInstance.Properties[5].Value);
-                        Console.WriteLine("Port : " + eventInstance.Properties[5].Value);
-                        Console.WriteLine("Path: " + eventInstance.Properties[7].Value);
-                        Console.WriteLine("FilePath : " + eventInstance.Properties[8].Value);
-                        Console.WriteLine("File: " + eventInstance.Properties[9].Value);
-                        Console.WriteLine("Type : " + eventInstance.Properties[10].Value);
-                        Console.WriteLine("AccessType : \n" + AccessType);
-                        Console.WriteLine("AccessType Reason : \n" + AccessTypeReason);
-                        Console.WriteLine("CreateTime : " + eventInstance.TimeCreated.Value.ToString("d/M/yyyy HH:mm:ss"));
-                        isStop = true;
-                        break;
+                                    Console.WriteLine("==============================================================");
+                                    Console.WriteLine("Check " + LogCheckTime);
+                                    Console.WriteLine("ID : " + ID);
+                                    Console.WriteLine("User : " + UserName);
+                                    Console.WriteLine("PC Name : " + PCName);
+                                    Console.WriteLine("Login_ID : " + Login_ID);
+                                    Console.WriteLine("Subject : " + Subject);
+                                    Console.WriteLine("IP Address : " + IPAddress);
+                                    Console.WriteLine("Port : " + Port);
+                                    Console.WriteLine("Path: " + Path);
+                                    Console.WriteLine("FilePath : " + FilePath);
+                                    Console.WriteLine("File: " + FileName);
+                                    Console.WriteLine("Type : " + Type);
+                                    Console.WriteLine("AccessType : \n" + AccessType);
+                                    Console.WriteLine("Reason : \n" + Reason);
+                                    Console.WriteLine("CreateTime : " + CreateTime);
+                                }
+                            }
+                            isStop = true;
+                            break;
+                        }
+                        if (ID != "")
+                        {
+                            sqlCon.Open();
+                            sqlCmd.Connection = sqlCon;
 
-                        //foreach (var VARIABLE2 in eventInstance.Properties) sb.AppendLine(VARIABLE2.Value.ToString());
-                        //Console.WriteLine("==============================================================");
-                        //Console.WriteLine("Check " + DateTime.Now.ToString());
-                        //Console.WriteLine("ID " + eventInstance.Id.ToString());
-                        //Console.WriteLine("sb : " + sb.ToString());
-                        //Console.WriteLine((eventInstance.Properties.Count > 1) ? "eventInstance" + eventInstance.Properties[1].Value.ToString() : "eventInstance" + "n/a");
-                        //Console.WriteLine(eventInstance.TimeCreated.Value.ToString("d/M/yyyy HH:mm:ss"));
-                        //isStop = true;
-                        //break;
+                            sqlCmd.CommandText = $"INSERT INTO arcon.dbo.EventLogView(time, id, username, PCname, subject, IPAddress, Port, Path, FilePath, Filename, type, AccessType, Reason, Createtime, Login_ID, Information, Count_index)" +
+                                                         $" VALUES ('" + LogCheckTime + "','" + ID + "','" + UserName + "','" + PCName + "','" + Subject + "','" + IPAddress + "','" + Port + "','" + Path + "','" + FilePath + "','" + FileName + "','" + Type + "','" + AccessType + "','" + Reason + "','" + CreateTime + "','" + Login_ID + "','" + Information + "','"+ m_index+"')";
+
+                            sqlCmd.ExecuteNonQuery();
+                            sqlCon.Close();
+                            
+                            eventsQuery.Session.ClearLog("Security");
+                        }
+                        if (isStop) break;
                     }
-                if (isStop) break;
-                try
-                {
-                }
-                catch (Exception e2)
-                {
-                    Console.WriteLine(e2.Message);
+                    catch (Exception e2)
+                    {
+                        sqlCon.Close();
+                        Console.WriteLine(e2.Message);
+                    }
                 }
             }
         }
@@ -152,13 +211,39 @@ namespace SSFSW
         {
             Console.WriteLine("Start");
             Timer CycleTimer = new System.Timers.Timer();
-            CycleTimer.Interval = 1000;
+            CycleTimer.Interval = 5000;
             CycleTimer.Elapsed += new ElapsedEventHandler(timer_Elapsed); 
             CycleTimer.Start();
 
             Console.Read();
         }
+        static string DataReplace(string p_Data)
+        {
+            string m_Data = p_Data;
+            m_Data = m_Data.Replace("\r", "");
+            m_Data = m_Data.Replace("\t", "");
+            m_Data = m_Data.Replace("%%1537", "DELETE");
+            m_Data = m_Data.Replace("%%1538", "READ_CONTROL");
+            m_Data = m_Data.Replace("%%1539", "WRITE_DAC");
+            m_Data = m_Data.Replace("%%1540", "WRITE_OWNER");
+            m_Data = m_Data.Replace("%%1541", "SYNCHRONIZE");
+            m_Data = m_Data.Replace("%%1542", "ACCESS_SYS_SEC");
+            m_Data = m_Data.Replace("%%1801", "SYNCHRONIZE");
+            m_Data = m_Data.Replace("%%4416", "ReadData (또는 ListDirectory)");
+            m_Data = m_Data.Replace("%%4417", "WriteData (또는 AddFile)");
+            m_Data = m_Data.Replace("%%4418", "AppendData (또는 AddSubdirectory 디렉터리 또는 CreatePipeInstance)");
+            m_Data = m_Data.Replace("%%4419", "ReadEA(레지스트리 개체의 경우 [하위 키 열거]입니다.)");
+            m_Data = m_Data.Replace("%%4420", "WriteEA");
+            m_Data = m_Data.Replace("%%4421", "DeleteChild");
+            m_Data = m_Data.Replace("%%4423", "ReadAttributes");
+            m_Data = m_Data.Replace("%%4424", "WriteAttributes");
+            m_Data = m_Data.Replace("D:(A;;FA;;;BA)", "");
+            m_Data = m_Data.Replace("D:(A;;FA;;;BA)", "");
+            m_Data = m_Data.Replace("D:(A;OICI;FA;;;WD)", "");
+            m_Data = m_Data.Replace("D:(A;OICI;FA;;;WD)", "");
 
+            return m_Data;
+        }
         // 쓰레드풀의 작업쓰레드가 지정된 시간 간격으로
         // 아래 이벤트 핸들러 실행
         static void timer_Elapsed(object sender, ElapsedEventArgs e)
