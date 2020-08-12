@@ -1,0 +1,57 @@
+정보	2020-08-06 오후 5:42:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	Tester6.txt
+
+액세스 요청 정보:
+	액세스 마스크:		0x100080
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+
+===========================================================================================================================================================================
+
+정보	2020-08-06 오후 5:42:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	Tester6.txt
+
+액세스 요청 정보:
+	액세스 마스크:		0x110080
+	액세스:		DELETE
+				SYNCHRONIZE
+				ReadAttributes
+				
+액세스 검사 결과:
+	DELETE:	허가됨	D:(A;OICI;FA;;;WD)
+				SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)

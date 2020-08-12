@@ -1,0 +1,6853 @@
+수준	날짜 및 시간	원본	이벤트 ID	작업 범주
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x3978
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4663	File System	"개체에 액세스하려고 했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:	Security
+	개체 유형:	File
+	개체 이름:	C:\TesterFolder
+	핸들 ID:		0x3978
+	리소스 특성:	S:AI
+
+프로세스 정보:
+	프로세스 ID:	0x1b10
+	프로세스 이름:	C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	액세스:	READ_CONTROL
+				
+	액세스 마스크:	0x20000"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4656	File System	"개체에 대한 핸들을 요청했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	개체 유형:		File
+	개체 이름:		C:\TesterFolder
+	핸들 ID:		0x3978
+	리소스 특성:	-
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	트랜잭션 ID:		{00000000-0000-0000-0000-000000000000}
+	액세스:		READ_CONTROL
+				ReadAttributes
+				
+	액세스 이유:		READ_CONTROL:	소유권에 의해 허가됨
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				
+	액세스 마스크:		0x20080
+	액세스 확인에 사용된 권한:	-
+	제한된 SID 카운트:	0"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x5614
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x3978
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4656	File System	"개체에 대한 핸들을 요청했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	개체 유형:		File
+	개체 이름:		C:\TesterFolder
+	핸들 ID:		0x3978
+	리소스 특성:	-
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	트랜잭션 ID:		{00000000-0000-0000-0000-000000000000}
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+	액세스 이유:		SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				
+	액세스 마스크:		0x100080
+	액세스 확인에 사용된 권한:	-
+	제한된 SID 카운트:	0"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x5614
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x3978
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4656	File System	"개체에 대한 핸들을 요청했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	개체 유형:		File
+	개체 이름:		C:\TesterFolder
+	핸들 ID:		0x3978
+	리소스 특성:	-
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	트랜잭션 ID:		{00000000-0000-0000-0000-000000000000}
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+	액세스 이유:		SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				
+	액세스 마스크:		0x100080
+	액세스 확인에 사용된 권한:	-
+	제한된 SID 카운트:	0"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x5614
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x3978
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4656	File System	"개체에 대한 핸들을 요청했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	개체 유형:		File
+	개체 이름:		C:\TesterFolder
+	핸들 ID:		0x3978
+	리소스 특성:	-
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	트랜잭션 ID:		{00000000-0000-0000-0000-000000000000}
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+	액세스 이유:		SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				
+	액세스 마스크:		0x100080
+	액세스 확인에 사용된 권한:	-
+	제한된 SID 카운트:	0"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x5614
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x3978
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4656	File System	"개체에 대한 핸들을 요청했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	개체 유형:		File
+	개체 이름:		C:\TesterFolder
+	핸들 ID:		0x3978
+	리소스 특성:	-
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	트랜잭션 ID:		{00000000-0000-0000-0000-000000000000}
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+	액세스 이유:		SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				
+	액세스 마스크:		0x100080
+	액세스 확인에 사용된 권한:	-
+	제한된 SID 카운트:	0"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x5614
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x3978
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4663	File System	"개체에 액세스하려고 했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:	Security
+	개체 유형:	File
+	개체 이름:	C:\TesterFolder
+	핸들 ID:		0x3978
+	리소스 특성:	S:AI
+
+프로세스 정보:
+	프로세스 ID:	0x1b10
+	프로세스 이름:	C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	액세스:	READ_CONTROL
+				
+	액세스 마스크:	0x20000"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4656	File System	"개체에 대한 핸들을 요청했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	개체 유형:		File
+	개체 이름:		C:\TesterFolder
+	핸들 ID:		0x3978
+	리소스 특성:	-
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	트랜잭션 ID:		{00000000-0000-0000-0000-000000000000}
+	액세스:		READ_CONTROL
+				ReadAttributes
+				
+	액세스 이유:		READ_CONTROL:	소유권에 의해 허가됨
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				
+	액세스 마스크:		0x20080
+	액세스 확인에 사용된 권한:	-
+	제한된 SID 카운트:	0"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x5614
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x21e0
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4663	File System	"개체에 액세스하려고 했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:	Security
+	개체 유형:	File
+	개체 이름:	C:\TesterFolder
+	핸들 ID:		0x21e0
+	리소스 특성:	S:AI
+
+프로세스 정보:
+	프로세스 ID:	0x1b10
+	프로세스 이름:	C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	액세스:	READ_CONTROL
+				
+	액세스 마스크:	0x20000"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4656	File System	"개체에 대한 핸들을 요청했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	개체 유형:		File
+	개체 이름:		C:\TesterFolder
+	핸들 ID:		0x21e0
+	리소스 특성:	-
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	트랜잭션 ID:		{00000000-0000-0000-0000-000000000000}
+	액세스:		READ_CONTROL
+				ReadAttributes
+				
+	액세스 이유:		READ_CONTROL:	소유권에 의해 허가됨
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				
+	액세스 마스크:		0x20080
+	액세스 확인에 사용된 권한:	-
+	제한된 SID 카운트:	0"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x5614
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x1f04
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4663	File System	"개체에 액세스하려고 했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:	Security
+	개체 유형:	File
+	개체 이름:	C:\TesterFolder
+	핸들 ID:		0x1f04
+	리소스 특성:	S:AI
+
+프로세스 정보:
+	프로세스 ID:	0x1b10
+	프로세스 이름:	C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	액세스:	ReadData (또는 ListDirectory)
+				
+	액세스 마스크:	0x1"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4656	File System	"개체에 대한 핸들을 요청했습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	개체 유형:		File
+	개체 이름:		C:\TesterFolder
+	핸들 ID:		0x1f04
+	리소스 특성:	-
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe
+
+액세스 요청 정보:
+	트랜잭션 ID:		{00000000-0000-0000-0000-000000000000}
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+	액세스 이유:		SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;S-1-5-21-672246340-2050370207-3556425990-500)
+				
+	액세스 마스크:		0x100081
+	액세스 확인에 사용된 권한:	-
+	제한된 SID 카운트:	0"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	4658	File System	"개체에 대한 핸들을 닫았습니다.
+
+주체:
+	보안 ID:		HJLEE-PC\Lee
+	계정 이름:		Lee
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0x183439
+
+개체:
+	개체 서버:		Security
+	핸들 ID:		0x5694
+
+프로세스 정보:
+	프로세스 ID:		0x1b10
+	프로세스 이름:		C:\Windows\explorer.exe"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:27	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	TESTER_3.TXT
+
+액세스 요청 정보:
+	액세스 마스크:		0x2
+	액세스:		WriteData (또는 AddFile)
+				
+액세스 검사 결과:
+	WriteData (또는 AddFile):	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	TESTER_3.TXT
+
+액세스 요청 정보:
+	액세스 마스크:		0x12019F
+	액세스:		READ_CONTROL
+				SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				WriteData (또는 AddFile)
+				AppendData (또는 AddSubdirectory 또는 CreatePipeInstance)
+				ReadEA
+				WriteEA
+				ReadAttributes
+				WriteAttributes
+				
+액세스 검사 결과:
+	READ_CONTROL:	허가됨	D:(A;OICI;FA;;;WD)
+				SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				WriteData (또는 AddFile):	허가됨	D:(A;OICI;FA;;;WD)
+				AppendData (또는 AddSubdirectory 또는 CreatePipeInstance):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadEA:	허가됨	D:(A;OICI;FA;;;WD)
+				WriteEA:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				WriteAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:26	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:25	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100080
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\IPC$
+	공유 경로:		
+	상대 대상 이름:	srvsvc
+
+액세스 요청 정보:
+	액세스 마스크:		0x12019F
+	액세스:		READ_CONTROL
+				SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				WriteData (또는 AddFile)
+				AppendData (또는 AddSubdirectory 또는 CreatePipeInstance)
+				ReadEA
+				WriteEA
+				ReadAttributes
+				WriteAttributes
+				
+액세스 검사 결과:
+	-
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	Tester_3.txt
+
+액세스 요청 정보:
+	액세스 마스크:		0x120089
+	액세스:		READ_CONTROL
+				SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadEA
+				ReadAttributes
+				
+액세스 검사 결과:
+	READ_CONTROL:	허가됨	D:(A;OICI;FA;;;WD)
+				SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadEA:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100080
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	Tester_3.txt
+
+액세스 요청 정보:
+	액세스 마스크:		0x100080
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	Tester_3.txt
+
+액세스 요청 정보:
+	액세스 마스크:		0x100080
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100080
+	액세스:		SYNCHRONIZE
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\IPC$
+	공유 경로:		
+	상대 대상 이름:	srvsvc
+
+액세스 요청 정보:
+	액세스 마스크:		0x12019F
+	액세스:		READ_CONTROL
+				SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				WriteData (또는 AddFile)
+				AppendData (또는 AddSubdirectory 또는 CreatePipeInstance)
+				ReadEA
+				WriteEA
+				ReadAttributes
+				WriteAttributes
+				
+액세스 검사 결과:
+	-
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"
+정보	2020-08-06 오후 5:40:24	Microsoft-Windows-Security-Auditing	5145	Detailed File Share	"클라이언트에 원하는 액세스 권한을 부여할 수 있는지 알아보기 위해 네트워크 공유 개체를 검사했습니다.
+	
+주체:
+	보안 ID:		HJLEE-PC\Guest
+	계정 이름:		Guest
+	계정 도메인:		HJLEE-PC
+	로그온 ID:		0xDB8740
+
+네트워크 정보:	
+	개체 유형:		File
+	원본 주소:		192.168.10.81
+	원본 포트:		60889
+	
+공유 정보:
+	공유 이름:		\\*\TesterFolder
+	공유 경로:		\??\C:\TesterFolder
+	상대 대상 이름:	\
+
+액세스 요청 정보:
+	액세스 마스크:		0x100081
+	액세스:		SYNCHRONIZE
+				ReadData (또는 ListDirectory)
+				ReadAttributes
+				
+액세스 검사 결과:
+	SYNCHRONIZE:	허가됨	D:(A;OICI;FA;;;WD)
+				ReadData (또는 ListDirectory):	허가됨	D:(A;OICI;FA;;;WD)
+				ReadAttributes:	허가됨	D:(A;OICI;FA;;;WD)
+				
+"

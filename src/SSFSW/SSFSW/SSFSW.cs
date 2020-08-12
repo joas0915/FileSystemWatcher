@@ -14,64 +14,62 @@ namespace SSFSW
 
     class SSFSW
     {
-
-        public static void DisplayEventAndLogInformation(string fileToSearch, DateTime actionTime)
+        public struct EvLogPara
         {
-            StringBuilder sb = new StringBuilder();
-            const string queryString = @"<QueryList>
-                                          <Query Id=""0"" Path=""Security"">
-                                            <Select Path=""Security"">*</Select>
-                                          </Query>
-                                        </QueryList>";
-            EventLogQuery eventsQuery = new EventLogQuery("Security", PathType.LogName, queryString);
-            eventsQuery.ReverseDirection = true;
-            EventLogReader logReader = new EventLogReader(eventsQuery);
-            bool isStop = false;
-            for (EventRecord eventInstance = logReader.ReadEvent(); null != eventInstance; eventInstance = logReader.ReadEvent())
+            public string LoadTime;
+            public string EventID;
+            public string UserName;
+            public string DomainName;
+            public string Subject;
+            public string Login_ID;
+            public string PC_IPAddress;
+            public string PC_Port;
+            public string Shared_Directory;
+            public string Shared_FileDirectory;
+            public string FileName;
+            public string Type;
+            public string AccessType;
+            public string AccessTypeReason;
+            public string EventTime;
+            public string Information;
+
+            public EvLogPara(string t_LoadTime, string t_EventID, string t_UserName, string t_DomainName, string t_Subject, string t_Login_ID, string t_PC_IPAddress, string t_PC_Port, string t_Shared_Directory, string t_Shared_FileDirectory, string t_FileName, string t_Type, string t_AccessType, string t_AccessTypeReason, string t_EventTime, string t_Information)
             {
-                foreach (var VARIABLE in eventInstance.Properties)
-                    if (VARIABLE.Value.ToString().ToLower().Contains(fileToSearch.ToLower()) && actionTime.ToString("d/M/yyyy HH:mm:ss") == eventInstance.TimeCreated.Value.ToString("d/M/yyyy HH:mm:ss"))
-                    {
-                        foreach (var VARIABLE2 in eventInstance.Properties) sb.AppendLine(VARIABLE2.Value.ToString());
-                        Console.WriteLine("sb : " + sb.ToString());
-                        Console.WriteLine((eventInstance.Properties.Count > 1) ? "eventInstance" + eventInstance.Properties[1].Value.ToString() : "eventInstance" + "n/a");
-                        Console.WriteLine("fileToSearch" + fileToSearch);
-                        isStop = true;
-                        break;
-                    }
-                if (isStop) break;
-                try
-                {
-
-                }
-                catch (Exception e2)
-                {
-                    Console.WriteLine(e2.Message);
-                }
+                LoadTime = t_LoadTime;
+                EventID = t_EventID;
+                UserName = t_UserName;
+                DomainName = t_DomainName;
+                Subject = t_Subject;
+                Login_ID = t_Login_ID;
+                PC_IPAddress = t_PC_IPAddress;
+                PC_Port = t_PC_Port;
+                Shared_Directory = t_Shared_Directory;
+                Shared_FileDirectory = t_Shared_FileDirectory;
+                FileName = t_FileName;
+                Type = t_Type;
+                AccessType = t_AccessType;
+                AccessTypeReason = t_AccessTypeReason;
+                EventTime = t_EventTime;
+                Information = t_Information;
             }
-
-            //            return e;z
+            public override string ToString() => $"({LoadTime},{EventID},{UserName},{DomainName},{Subject},{Login_ID},{PC_IPAddress},{PC_Port},{Shared_Directory},{Shared_FileDirectory},{FileName},{Type},{AccessType},{AccessTypeReason},{EventTime},{Information})";
         }
+
         static void InsertEventLog()
         {
             /////  EventLog Parameter   /////
-            string FoldertoSearch = @"C:\TesterFolder";
-            string LogCheckTime = "";
-            string ID = "";
-            string Login_ID = "";
-            string UserName= "";
-            string PCName = "";
-            string Subject= "";
-            string IPAddress= "";
-            string Port= "";
-            string Path= "";
-            string FilePath= "";
-            string FileName= "";
-            string Type= "";
-            string AccessType = "";
-            string Reason = "";
-            string CreateTime= "";
-            string Information = "";
+            EvLogPara evlp = new EvLogPara("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            string FoldertoSearch = "";
+            string[] LanguageFilter = { "File System", "Detailed File Share", "Removable Storage"};
+            string[] DataComparer   = { "OldData", "NewData", };
+
+            if (File.Exists(@"C:\ARCON\aosvc.cfg"))
+            {
+                StreamReader rdr = new StreamReader(@"C:\ARCON\aosvc.cfg");
+                FoldertoSearch = rdr.ReadLine();
+                rdr.Close();
+            }
+
             StringBuilder sb = new StringBuilder();
             const string queryString = @"<QueryList>
                                           <Query Id=""0"" Path=""Security"">
@@ -82,15 +80,12 @@ namespace SSFSW
             eventsQuery.ReverseDirection = true;
             EventLogReader logReader = new EventLogReader(eventsQuery);
             bool isStop = false;
-            int m_index = 0;
             /////  EventLog Parameter   /////
 
             /////  DBConnect Parameter   /////
             string g_ConnectionStr = @"Data Source=192.168.10.230,7100;Initial Catalog=arcon;Integrated Security=False;User ID=arconsa;Password=arconsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
-            //string SQL_CONNSTR = @"Network Library=DBMSSOCN;Data Source=192.168.10.230,7100;Initial Catalog=OTP_TEST_DB;User Id=arconsa;Password=arconsa@pass0";
-
-            SqlConnection sqlCon = new SqlConnection(g_ConnectionStr);
             SqlCommand sqlCmd = new SqlCommand();
+            SqlConnection sqlCon = new SqlConnection(g_ConnectionStr);
             /////  DBConnect Parameter   /////
 
             for (EventRecord eventInstance = logReader.ReadEvent(); null != eventInstance; eventInstance = logReader.ReadEvent())
@@ -99,96 +94,97 @@ namespace SSFSW
                 {
                     try
                     {
-                        if (!VARIABLE.Value.ToString().Contains(FoldertoSearch) && (eventInstance.TaskDisplayName.ToString() == "File System" || eventInstance.TaskDisplayName.ToString() == "Detailed File Share"))
+                        if (!VARIABLE.Value.ToString().Contains(FoldertoSearch) && (eventInstance.TaskDisplayName.ToString() == "File System" || eventInstance.TaskDisplayName.ToString() == "Detailed File Share" || eventInstance.TaskDisplayName.ToString() == "Removable Storage"))
                         {
                             //내 PC에서 조작한경우
                             if (eventInstance.Id.ToString() == "4656")
                             {
-                                if (eventInstance.Properties[6].Value.ToString().Replace(@"C:\TesterFolder", "").Length != 0)
+                                if (eventInstance.Properties[6].Value.ToString().Replace(FoldertoSearch, "").Length != 0)
                                 {
-                                    m_index++;
-                                    LogCheckTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
-                                    ID = eventInstance.Id.ToString();
-                                    UserName = eventInstance.Properties[1].Value.ToString();
-                                    PCName = eventInstance.Properties[2].Value.ToString();
-                                    Login_ID = eventInstance.Properties[3].Value.ToString();
-                                    Information = eventInstance.Properties[4].Value.ToString();
-                                    Subject = eventInstance.Properties[5].Value.ToString();
-                                    IPAddress = "";
-                                    Port = "";
-                                    Path = "";
-                                    FilePath = eventInstance.Properties[6].Value.ToString();
-                                    FileName = "";
-                                    Type = "";
-                                    AccessType = DataReplace(eventInstance.Properties[9].Value.ToString());
-                                    Reason = DataReplace(eventInstance.Properties[10].Value.ToString());
-                                    CreateTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    evlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    evlp.EventID = eventInstance.Id.ToString();
+                                    evlp.UserName = eventInstance.Properties[1].Value.ToString();
+                                    evlp.DomainName = eventInstance.Properties[2].Value.ToString();
+                                    evlp.Login_ID = eventInstance.Properties[3].Value.ToString();
+                                    evlp.Information = eventInstance.Properties[4].Value.ToString();
+                                    evlp.Subject = eventInstance.Properties[5].Value.ToString();
+                                    evlp.PC_IPAddress = "";
+                                    evlp.PC_Port = "";
+                                    evlp.Shared_Directory = "";
+                                    evlp.Shared_FileDirectory = eventInstance.Properties[6].Value.ToString();
+                                    evlp.FileName = Path.GetFileName(eventInstance.Properties[6].Value.ToString());
+                                    evlp.Type = "";
+                                    evlp.AccessType = DataReplace(eventInstance.Properties[9].Value.ToString());
+                                    evlp.AccessTypeReason = DataReplace(eventInstance.Properties[10].Value.ToString());
+                                    evlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
 
                                     Console.WriteLine("==============================================================");
-                                    Console.WriteLine("Check " + LogCheckTime);
-                                    Console.WriteLine("ID : " + ID);
-                                    Console.WriteLine("User : " + UserName);
-                                    Console.WriteLine("PC Name : " + PCName);
-                                    Console.WriteLine("Login_ID : " + Login_ID);
-                                    Console.WriteLine("Information : " + Information);
-                                    Console.WriteLine("Subject : " + Subject);
-                                    Console.WriteLine("FilePath : " + FilePath);
-                                    Console.WriteLine("AccessType : \n" + AccessType);
-                                    Console.WriteLine("Reason : \n" + Reason);
-                                    Console.WriteLine("CreateTime: " + CreateTime);
+                                    Console.WriteLine("LoadTime " + evlp.LoadTime);
+                                    Console.WriteLine("EventID : " + evlp.EventID);
+                                    Console.WriteLine("UserName : " + evlp.UserName);
+                                    Console.WriteLine("DomainName : " + evlp.DomainName);
+                                    Console.WriteLine("Login_ID : " + evlp.Login_ID);
+                                    Console.WriteLine("Information : " + evlp.Information);
+                                    Console.WriteLine("Subject : " + evlp.Subject);
+                                    Console.WriteLine("Shared_FileDirectory : " + evlp.Shared_FileDirectory);
+                                    Console.WriteLine("FileName : " + evlp.FileName);
+                                    Console.WriteLine("AccessType : \n" + evlp.AccessType);
+                                    Console.WriteLine("AccessTypeReason : \n" + evlp.AccessTypeReason);
+                                    Console.WriteLine("EventTime: " + evlp.EventTime);
+                                    
                                 }
                             }
                             //원격에서 접속해서 조작한 경우
                             if (eventInstance.Id.ToString() == "5145")
                             {
-                                if (eventInstance.Properties[9].Value.ToString().Replace("\\", "").Length != 0 && eventInstance.Properties[4].Value.ToString() == "File")
+                                Console.WriteLine(eventInstance.Properties[9].Value.ToString());
+                                if (eventInstance.Properties[9].Value.ToString().Replace("\\", "").Length != 0 && eventInstance.TaskDisplayName.ToString() == "Detailed File Share")
                                 {
-                                    m_index++;
-                                    LogCheckTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
-                                    ID = eventInstance.Id.ToString();
-                                    UserName = eventInstance.Properties[1].Value.ToString();
-                                    PCName = eventInstance.Properties[2].Value.ToString();
-                                    Login_ID = eventInstance.Properties[3].Value.ToString();
-                                    Information = "";
-                                    Subject = eventInstance.Properties[4].Value.ToString();
-                                    IPAddress = eventInstance.Properties[5].Value.ToString();
-                                    Port = eventInstance.Properties[6].Value.ToString();
-                                    Path = eventInstance.Properties[7].Value.ToString();
-                                    FilePath = eventInstance.Properties[8].Value.ToString();
-                                    FileName = eventInstance.Properties[9].Value.ToString();
-                                    Type = eventInstance.Properties[10].Value.ToString();
-                                    AccessType = DataReplace(eventInstance.Properties[11].Value.ToString());
-                                    Reason = DataReplace(eventInstance.Properties[12].Value.ToString());
-                                    CreateTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    evlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    evlp.EventID = eventInstance.Id.ToString();
+                                    evlp.UserName = eventInstance.Properties[1].Value.ToString();
+                                    evlp.DomainName = eventInstance.Properties[2].Value.ToString();
+                                    evlp.Subject = eventInstance.Properties[4].Value.ToString();
+                                    evlp.Login_ID = eventInstance.Properties[3].Value.ToString();
+                                    evlp.PC_IPAddress = eventInstance.Properties[5].Value.ToString();
+                                    evlp.PC_Port = eventInstance.Properties[6].Value.ToString();
+                                    evlp.Shared_Directory = eventInstance.Properties[7].Value.ToString();
+                                    evlp.Shared_FileDirectory = eventInstance.Properties[8].Value.ToString();
+                                    evlp.FileName = eventInstance.Properties[9].Value.ToString();
+                                    evlp.Type = eventInstance.Properties[10].Value.ToString();
+                                    evlp.AccessType = DataReplace(eventInstance.Properties[11].Value.ToString());
+                                    evlp.AccessTypeReason = DataReplace(eventInstance.Properties[12].Value.ToString());
+                                    evlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    evlp.Information = "";
 
                                     Console.WriteLine("==============================================================");
-                                    Console.WriteLine("Check " + LogCheckTime);
-                                    Console.WriteLine("ID : " + ID);
-                                    Console.WriteLine("User : " + UserName);
-                                    Console.WriteLine("PC Name : " + PCName);
-                                    Console.WriteLine("Login_ID : " + Login_ID);
-                                    Console.WriteLine("Subject : " + Subject);
-                                    Console.WriteLine("IP Address : " + IPAddress);
-                                    Console.WriteLine("Port : " + Port);
-                                    Console.WriteLine("Path: " + Path);
-                                    Console.WriteLine("FilePath : " + FilePath);
-                                    Console.WriteLine("File: " + FileName);
-                                    Console.WriteLine("Type : " + Type);
-                                    Console.WriteLine("AccessType : \n" + AccessType);
-                                    Console.WriteLine("Reason : \n" + Reason);
-                                    Console.WriteLine("CreateTime : " + CreateTime);
+                                    Console.WriteLine("LoadTime " + evlp.LoadTime);
+                                    Console.WriteLine("EventID : " + evlp.EventID);
+                                    Console.WriteLine("UserName : " + evlp.UserName);
+                                    Console.WriteLine("DomainName : " + evlp.DomainName);
+                                    Console.WriteLine("Subject : " + evlp.Subject);
+                                    Console.WriteLine("Login_ID : " + evlp.Login_ID);
+                                    Console.WriteLine("PC_IPAddress : " + evlp.PC_IPAddress);
+                                    Console.WriteLine("PC_Port : " + evlp.PC_Port);
+                                    Console.WriteLine("Shared_Directory: " + evlp.Shared_Directory);
+                                    Console.WriteLine("Shared_FileDirectory : " + evlp.Shared_FileDirectory);
+                                    Console.WriteLine("FileName: " + evlp.FileName);
+                                    Console.WriteLine("Type : " + evlp.Type);
+                                    Console.WriteLine("AccessType : \n" + evlp.AccessType);
+                                    Console.WriteLine("AccessTypeReason : \n" + evlp.AccessTypeReason);
+                                    Console.WriteLine("CreateTime : " + evlp.EventTime);
                                 }
                             }
                             isStop = true;
                             break;
                         }
-                        if (ID != "")
+                        if (evlp.EventID != "")
                         {
                             sqlCon.Open();
                             sqlCmd.Connection = sqlCon;
 
-                            sqlCmd.CommandText = $"INSERT INTO arcon.dbo.EventLogView(time, id, username, PCname, subject, IPAddress, Port, Path, FilePath, Filename, type, AccessType, Reason, Createtime, Login_ID, Information, Count_index)" +
-                                                         $" VALUES ('" + LogCheckTime + "','" + ID + "','" + UserName + "','" + PCName + "','" + Subject + "','" + IPAddress + "','" + Port + "','" + Path + "','" + FilePath + "','" + FileName + "','" + Type + "','" + AccessType + "','" + Reason + "','" + CreateTime + "','" + Login_ID + "','" + Information + "','"+ m_index+"')";
+                            //sqlCmd.CommandText = $"INSERT INTO arcon.dbo.EventLogView(time, id, username, PCname, subject, IPAddress, Port, Path, FilePath, Filename, type, AccessType, Reason, Createtime, Login_ID, Information, Count_index)" +
+                            //                             $" VALUES ('" + LogCheckTime + "','" + ID + "','" + UserName + "','" + PCName + "','" + Subject + "','" + IPAddress + "','" + Port + "','" + Path + "','" + FilePath + "','" + FileName + "','" + Type + "','" + AccessType + "','" + Reason + "','" + CreateTime + "','" + Login_ID + "','" + Information + "','"+ m_index+"')";
 
                             sqlCmd.ExecuteNonQuery();
                             sqlCon.Close();
@@ -250,37 +246,5 @@ namespace SSFSW
         {
             InsertEventLog();
         }
-        static void FSW()
-        {
-            string watchPath = @"C:\TesterFolder";
-            FileSystemWatcher fsw = new FileSystemWatcher(watchPath);
-            fsw.NotifyFilter = NotifyFilters.FileName |
-                NotifyFilters.DirectoryName |
-                NotifyFilters.Size |
-                NotifyFilters.LastAccess |
-                NotifyFilters.CreationTime |
-                NotifyFilters.Security |
-                NotifyFilters.LastWrite;
-            fsw.Filter = "*.*"; ; //감시할 파일 유형 선택 예) *.* 모든 파일 
-            fsw.Created += new FileSystemEventHandler(Created);
-            fsw.Changed += new FileSystemEventHandler(Changed);
-            fsw.Renamed += new RenamedEventHandler(Renamed);
-            //폴더외 이동시 Move와 Delete 구분불가 (Delete로 동일하게 표기)
-            fsw.Deleted += new FileSystemEventHandler(Deleted);
-
-            fsw.EnableRaisingEvents = true;
-
-            Console.WriteLine("Wait until File Created ~~~");
-            Console.Read();
-        }
-        private static void Created(object sender, FileSystemEventArgs e) { Console.WriteLine("{0} {1} {2}", WindowsIdentity.GetCurrent().Name,e.ChangeType.ToString(), e.FullPath); }
-        private static void Deleted(object sender, FileSystemEventArgs e) { Console.WriteLine("{0} {1} {2}", WindowsIdentity.GetCurrent().Name, e.ChangeType.ToString(), e.FullPath); }
-        private static void Changed(object source, FileSystemEventArgs e)
-        {
-            DisplayEventAndLogInformation(e.Name,DateTime.Now);
-            Console.WriteLine("{0} {1} {2}", WindowsIdentity.GetCurrent().Name, e.ChangeType.ToString(), e.FullPath);
-        }
-        private static void Renamed(object source, RenamedEventArgs e) { Console.WriteLine("{0} {1} {2}", WindowsIdentity.GetCurrent().Name, e.ChangeType.ToString(), e.FullPath); }
-
     }
 }

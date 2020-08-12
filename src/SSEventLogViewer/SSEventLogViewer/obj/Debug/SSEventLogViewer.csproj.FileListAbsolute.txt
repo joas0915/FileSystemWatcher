@@ -1,0 +1,9 @@
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\bin\Debug\SSEventLogViewer.exe
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\bin\Debug\SSEventLogViewer.pdb
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\obj\Debug\SSEventLogViewer.csprojAssemblyReference.cache
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\obj\Debug\SSEventLogViewer.SSEventLogViewer.resources
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\obj\Debug\SSEventLogViewer.Properties.Resources.resources
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\obj\Debug\SSEventLogViewer.csproj.GenerateResource.cache
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\obj\Debug\SSEventLogViewer.csproj.CoreCompileInputs.cache
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\obj\Debug\SSEventLogViewer.exe
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\obj\Debug\SSEventLogViewer.pdb
