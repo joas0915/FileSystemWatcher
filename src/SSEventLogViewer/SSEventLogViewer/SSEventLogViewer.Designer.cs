@@ -35,8 +35,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Button_File = new System.Windows.Forms.Button();
             this.TB_FileName = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Button_IPAddress = new System.Windows.Forms.Button();
+            this.TB_IPAddress = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // DB_ListView_Log
@@ -45,9 +49,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DB_ListView_Log.HideSelection = false;
-            this.DB_ListView_Log.Location = new System.Drawing.Point(12, 146);
+            this.DB_ListView_Log.Location = new System.Drawing.Point(12, 71);
             this.DB_ListView_Log.Name = "DB_ListView_Log";
-            this.DB_ListView_Log.Size = new System.Drawing.Size(927, 392);
+            this.DB_ListView_Log.Size = new System.Drawing.Size(1070, 467);
             this.DB_ListView_Log.TabIndex = 0;
             this.DB_ListView_Log.UseCompatibleStateImageBehavior = false;
             // 
@@ -107,11 +111,40 @@
             this.TB_FileName.Size = new System.Drawing.Size(173, 21);
             this.TB_FileName.TabIndex = 1;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Button_IPAddress);
+            this.groupBox3.Controls.Add(this.TB_IPAddress);
+            this.groupBox3.Location = new System.Drawing.Point(684, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(330, 53);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "IPAddress";
+            // 
+            // Button_IPAddress
+            // 
+            this.Button_IPAddress.Location = new System.Drawing.Point(197, 20);
+            this.Button_IPAddress.Name = "Button_IPAddress";
+            this.Button_IPAddress.Size = new System.Drawing.Size(127, 21);
+            this.Button_IPAddress.TabIndex = 2;
+            this.Button_IPAddress.Text = "IPAddressSearch";
+            this.Button_IPAddress.UseVisualStyleBackColor = true;
+            this.Button_IPAddress.Click += new System.EventHandler(this.Button_IPAddress_Click);
+            // 
+            // TB_IPAddress
+            // 
+            this.TB_IPAddress.Location = new System.Drawing.Point(12, 20);
+            this.TB_IPAddress.Name = "TB_IPAddress";
+            this.TB_IPAddress.Size = new System.Drawing.Size(173, 21);
+            this.TB_IPAddress.TabIndex = 1;
+            // 
             // SSEventLogViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 550);
+            this.ClientSize = new System.Drawing.Size(1094, 550);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DB_ListView_Log);
@@ -121,6 +154,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -134,6 +169,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Button_File;
         private System.Windows.Forms.TextBox TB_FileName;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button Button_IPAddress;
+        private System.Windows.Forms.TextBox TB_IPAddress;
     }
 }
 
