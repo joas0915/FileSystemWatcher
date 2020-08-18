@@ -59,7 +59,9 @@ namespace SSEventLogService
 
         static string[] LanguageFilter = new string[3];
 
+        static bool Triger = false;
         static bool TF = true;
+
         static DateTime TC_1 = new DateTime(0);
         static DateTime TC_2 = new DateTime(0);
         static DateTime Ev_TC = new DateTime(0);
@@ -71,6 +73,9 @@ namespace SSEventLogService
 
         protected override void OnStart(string[] args)
         {
+            LogWrite("Service Start");
+            double Time_Interval = 5 * 60 * 1000;
+            LogWrite("Time_Interval = " + Time_Interval.ToString());
             Initialize();
             Timer CycleTimer = new System.Timers.Timer();
             CycleTimer.Interval = 5 * 60 * 1000;
@@ -80,6 +85,7 @@ namespace SSEventLogService
 
         private void Initialize()
         {
+            LogWrite("Initialize");
             string[] LanguageTypeCheck_EN = { "Application Generated", "Certification Services", "Detailed File Share", "File Share", "File System", "Filtering Platform Connection", "Filtering Platform Packet Drop", "Handle Manipulation", "Kernel Object", "Other Object Access Events", "Registry ", "SAM", "Removable Storage" };
             string[] LanguageTypeCheck_KR = { "응용 프로그램 생성됨", "인증 서비스", "세부 파일 공유", "파일 공유", "파일 시스템", "필터링 플랫폼 연결", "필터링 플랫폼 패킷 삭제", "핸들 조작", "커널 개체", "기타 개체 액세스 이벤트", "레지스트리", "SAM", "이동식 저장소" };
             bool m_Flag = true;
@@ -103,7 +109,8 @@ namespace SSEventLogService
                             LanguageFilter[0] = "File System";
                             LanguageFilter[1] = "Detailed File Share";
                             LanguageFilter[2] = "Removable Storage";
-                            Console.WriteLine("English");
+                            LogWrite("LanguageTypeCheck = English");
+                            //Console.WriteLine("English");
                         }
                         if (eventInstance.TaskDisplayName.ToString() == LanguageTypeCheck_KR[i])
                         {
@@ -111,7 +118,8 @@ namespace SSEventLogService
                             LanguageFilter[0] = "파일 시스템";
                             LanguageFilter[1] = "세부 파일 공유";
                             LanguageFilter[2] = "이동식 저장소";
-                            Console.WriteLine("Korean");
+                            LogWrite("LanguageTypeCheck = Korean");
+                            //Console.WriteLine("Korean");
                         }
                     }
                 }
@@ -122,6 +130,18 @@ namespace SSEventLogService
 
         private void InsertEventLog()
         {
+            if (Triger)
+            {
+                LogWrite("InsertEventLog Already Start");
+                return;
+            }
+            else
+            {
+                LogWrite("InsertEventLog Start");
+                Triger = true;
+            }
+
+            
             /////  EventLog Parameter   /////
             EvLogPara nevlp = new EvLogPara("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
             EvLogPara oevlp = new EvLogPara("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
@@ -229,15 +249,19 @@ namespace SSEventLogService
                             if (DateTime.Compare(TC_1, (DateTime)eventInstance.TimeCreated) == -1)
                                 TC_1 = (DateTime)eventInstance.TimeCreated;
                             TF = false;
+                            LogWrite("InsertEventLog InserData");
                         }
                     }
                     catch (Exception e2)
                     {
                         sqlCon.Close();
-                        Console.WriteLine(e2.Message);
+                        LogWrite(e2.Message);
+                        //Console.WriteLine(e2.Message);
                     }
                 }
             }
+            Triger = false;
+            LogWrite("InsertEventLog End");
             //Event Delete
             //eventsQuery.Session.ClearLog("Security");
         }
@@ -254,6 +278,44 @@ namespace SSEventLogService
                 return true;
             else
                 return false;
+        }
+
+        //로그 파일
+        private void LogWrite(string str)
+        {
+            string DirPath = @"C:\ARCON\SSEvent" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            string FilePath = DirPath + "\\Log_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+            string temp;
+
+            DirectoryInfo di = new DirectoryInfo(DirPath);
+            FileInfo fi = new FileInfo(FilePath);
+
+            try
+            {
+                if (!di.Exists) Directory.CreateDirectory(DirPath);
+                if (!fi.Exists)
+                {
+                    using (StreamWriter sw = new StreamWriter(FilePath))
+                    {
+                        temp = string.Format("[{0}] {1}", DateTime.Now, str);
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(FilePath))
+                    {
+                        temp = string.Format("[{0}] {1}", DateTime.Now, str);
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
         }
 
         private string DataReplace(string p_Data)
@@ -286,6 +348,7 @@ namespace SSEventLogService
 
         protected override void OnStop()
         {
+            LogWrite("Service Stop");
         }
     }
 }

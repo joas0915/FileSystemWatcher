@@ -1,7 +1,6 @@
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\bin\x86\Release\SSEventLogService.exe.config
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\bin\x86\Release\SSEventLogService.exe
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\bin\x86\Release\SSEventLogService.pdb
-C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\obj\x86\Release\SSEventLogService.csprojAssemblyReference.cache
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\obj\x86\Release\SSEventLogService.csproj.CoreCompileInputs.cache
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\obj\x86\Release\SSEventLogService.exe
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\obj\x86\Release\SSEventLogService.pdb

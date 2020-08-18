@@ -57,6 +57,7 @@ namespace SSFSW
         }
 
         static string[] LanguageFilter = new string[3];
+        static bool Triger = false;
         static bool TF = true;
         static DateTime TC_1 = new DateTime(0);
         static DateTime TC_2 = new DateTime(0);
@@ -64,7 +65,18 @@ namespace SSFSW
 
         static void InsertEventLog()
         {
-            Console.WriteLine("LogSearchStart");
+
+            if (Triger)
+            {
+                Console.WriteLine("Already On");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("LogSearchStart");
+                Triger = true;
+            }
+            
             EvLogPara nevlp = new EvLogPara("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
             EvLogPara oevlp = new EvLogPara("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
 
@@ -211,6 +223,7 @@ namespace SSFSW
                     }
                 }
             }
+            Triger = false;
             //Event Delete
             //eventsQuery.Session.ClearLog("Security");
         }
@@ -219,6 +232,7 @@ namespace SSFSW
         {
             Initialize();
             Console.WriteLine("Start");
+            LogWrite("Start");
             Timer CycleTimer = new System.Timers.Timer();
             //CycleTimer.Interval = 5 * 60 * 1000;
             CycleTimer.Interval = 5000;
@@ -227,6 +241,7 @@ namespace SSFSW
 
             Console.Read();
         }
+
         static void Initialize()
         {
             string[] LanguageTypeCheck_EN = { "Application Generated", "Certification Services", "Detailed File Share", "File Share", "File System", "Filtering Platform Connection", "Filtering Platform Packet Drop", "Handle Manipulation", "Kernel Object", "Other Object Access Events", "Registry ", "SAM", "Removable Storage" };
@@ -268,6 +283,45 @@ namespace SSFSW
                     break;
             }
         }
+
+        //로그 파일
+        static void LogWrite(string str)
+        {
+            string DirPath = @"C:\ARCON\SSEvent" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            string FilePath = DirPath + "\\Log_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+            string temp;
+
+            DirectoryInfo di = new DirectoryInfo(DirPath);
+            FileInfo fi = new FileInfo(FilePath);
+
+            try
+            {
+                if (!di.Exists) Directory.CreateDirectory(DirPath);
+                if (!fi.Exists)
+                {
+                    using (StreamWriter sw = new StreamWriter(FilePath))
+                    {
+                        temp = string.Format("[{0}] {1}", DateTime.Now, str);
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(FilePath))
+                    {
+                        temp = string.Format("[{0}] {1}", DateTime.Now, str);
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
 
         static string DataReplace(string p_Data)
         {
