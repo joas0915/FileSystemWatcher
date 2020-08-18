@@ -63,6 +63,12 @@ namespace SSFSW
         static DateTime TC_2 = new DateTime(0);
         static DateTime Ev_TC = new DateTime(0);
 
+        static DateTime TrialTime = new DateTime(0);
+        static DateTime LimitTime = new DateTime(2020,08,27,00,00,00);
+
+        static string[] lines = null;
+        static string UserName = "";
+
         static void InsertEventLog()
         {
 
@@ -101,7 +107,8 @@ namespace SSFSW
             eventsQuery.ReverseDirection = true;
             EventLogReader logReader = new EventLogReader(eventsQuery);
 
-            string g_ConnectionStr = @"Data Source=192.168.10.230,7100;Initial Catalog=arcon;Integrated Security=False;User ID=arconsa;Password=arconsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
+            //string g_ConnectionStr = @"Data Source=192.168.10.230,7100;Initial Catalog=arcon;Integrated Security=False;User ID=arconsa;Password=arconsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
+            string g_ConnectionStr = @"Data Source=127.0.0.1,1433;Initial Catalog=Eventlog;Integrated Security=False;User ID=eventsa;Password=eventsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
             SqlCommand sqlCmd = new SqlCommand();
             SqlConnection sqlCon = new SqlConnection(g_ConnectionStr);
 
@@ -124,7 +131,7 @@ namespace SSFSW
                             {
                                 if (eventInstance.Properties[6].Value.ToString().Replace(FoldertoSearch, "").Length != 0)
                                 {
-                                    nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                     nevlp.EventID = eventInstance.Id.ToString();
                                     nevlp.UserName = eventInstance.Properties[1].Value.ToString();
                                     nevlp.DomainName = eventInstance.Properties[2].Value.ToString();
@@ -139,7 +146,7 @@ namespace SSFSW
                                     nevlp.AccessMask = "";
                                     nevlp.AccessList = DataReplace(eventInstance.Properties[9].Value.ToString());
                                     nevlp.AccessReason = DataReplace(eventInstance.Properties[10].Value.ToString());
-                                    nevlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    nevlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd HH:mm:ss.sss");
 
                                     Console.WriteLine("==============================================================");
                                     Console.WriteLine("LoadTime " + nevlp.LoadTime);
@@ -160,7 +167,7 @@ namespace SSFSW
                             {
                                 if (eventInstance.Properties[9].Value.ToString().Replace("\\", "").Length != 0 && eventInstance.TaskDisplayName.ToString() == LanguageFilter[1])
                                 {
-                                    nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                     nevlp.EventID = eventInstance.Id.ToString();
                                     nevlp.UserName = eventInstance.Properties[1].Value.ToString();
                                     nevlp.DomainName = eventInstance.Properties[2].Value.ToString();
@@ -174,7 +181,7 @@ namespace SSFSW
                                     nevlp.AccessMask = eventInstance.Properties[10].Value.ToString();
                                     nevlp.AccessList = DataReplace(eventInstance.Properties[11].Value.ToString());
                                     nevlp.AccessReason = DataReplace(eventInstance.Properties[12].Value.ToString());
-                                    nevlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    nevlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                     nevlp.Information = "";
 
                                     Console.WriteLine("==============================================================");
@@ -201,7 +208,7 @@ namespace SSFSW
                             sqlCon.Open();
                             sqlCmd.Connection = sqlCon;
 
-                            sqlCmd.CommandText = $"INSERT INTO arcon.dbo.EventLogView(LoadTime, EventID, UserName, DomainName, Subject, PC_IPAddress, PC_Port, ShareName, ShareLocalPath, FileName, AccessMask, AccessList, AccessReason, EventTime, LogonID, Information)" +
+                            sqlCmd.CommandText = $"INSERT INTO Eventlog.dbo.EventLogView(LoadTime, EventID, UserName, DomainName, Subject, PC_IPAddress, PC_Port, ShareName, ShareLocalPath, FileName, AccessMask, AccessList, AccessReason, EventTime, LogonID, Information)" +
                                                          $" VALUES ('" + nevlp.LoadTime + "','" + nevlp.EventID + "','" + nevlp.UserName + "','" + nevlp.DomainName + "','" + nevlp.Subject + "','" + nevlp.PC_IPAddress + "','" + nevlp.PC_Port + "','" + nevlp.ShareName + "','" + nevlp.ShareLocalPath + "','" + nevlp.FileName + "','" + nevlp.AccessMask + "','" + nevlp.AccessList + "','" + nevlp.AccessReason + "','" + nevlp.EventTime + "','" + nevlp.LogonID + "','" + nevlp.Information + "')";
 
                             oevlp = nevlp;
@@ -230,7 +237,18 @@ namespace SSFSW
 
         static void Main(string[] args)
         {
+            if (File.Exists(@"C:\ARCON\aosvc.cfg"))
+            {
+                lines = File.ReadAllLines(@"C:\ARCON\aosvc.cfg");
+                UserName = lines[1]; // or whatever.
+            }
+
             Initialize();
+            if (DateTime.Compare(TrialTime.AddDays(7), DateTime.Now) != 1)
+                return;
+            if (DateTime.Compare(LimitTime, DateTime.Now) != 1)
+                return;
+
             Console.WriteLine("Start");
             LogWrite("Start");
             Timer CycleTimer = new System.Timers.Timer();
@@ -244,6 +262,7 @@ namespace SSFSW
 
         static void Initialize()
         {
+            TrialMode();
             string[] LanguageTypeCheck_EN = { "Application Generated", "Certification Services", "Detailed File Share", "File Share", "File System", "Filtering Platform Connection", "Filtering Platform Packet Drop", "Handle Manipulation", "Kernel Object", "Other Object Access Events", "Registry ", "SAM", "Removable Storage" };
             string[] LanguageTypeCheck_KR = { "응용 프로그램 생성됨", "인증 서비스", "세부 파일 공유", "파일 공유", "파일 시스템", "필터링 플랫폼 연결", "필터링 플랫폼 패킷 삭제", "핸들 조작", "커널 개체", "기타 개체 액세스 이벤트", "레지스트리", "SAM", "이동식 저장소" };
             bool m_Flag = true;
@@ -287,8 +306,9 @@ namespace SSFSW
         //로그 파일
         static void LogWrite(string str)
         {
-            string DirPath = @"C:\ARCON\SSEvent" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
-            string FilePath = DirPath + "\\Log_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+            string DirPath = @"C:\Users\"+(System.Security.Principal.WindowsIdentity.GetCurrent().Name).Split('\\')[1]+@"\AppData\Roaming\EventLogView" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            //string DirPath = @"C:\Users\Lee\AppData\Roaming\EventLogView" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            string FilePath = DirPath + "\\EventLog_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
             string temp;
 
             DirectoryInfo di = new DirectoryInfo(DirPath);
@@ -318,10 +338,40 @@ namespace SSFSW
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
             }
         }
 
+        static void TrialMode()
+        {
+            string DirPath = @"C:\Users\" + (System.Security.Principal.WindowsIdentity.GetCurrent().Name).Split('\\')[1] + @"\AppData\Roaming\EventLogView" + @"\Option\";
+            string FilePath = DirPath + "\\SerialNumber.ini";
+            string temp;
+
+            DirectoryInfo di = new DirectoryInfo(DirPath);
+            FileInfo fi = new FileInfo(FilePath);
+
+            try
+            {
+                if (!di.Exists) Directory.CreateDirectory(DirPath);
+                if (!fi.Exists)
+                {
+                    using (StreamWriter sw = new StreamWriter(FilePath))
+                    {
+                        //Trial AES256
+                        temp = string.Format("hoUX64SudQXYNJJhTKMogQ==");
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+                var info = new FileInfo(FilePath);
+                TrialTime = info.CreationTime;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
 
         static string DataReplace(string p_Data)
         {

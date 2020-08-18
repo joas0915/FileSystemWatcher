@@ -1,0 +1,25 @@
+데이터베이스 및 테이블 변경 내용 전달
+
+ 
+
+1. 데이터베이스 정보
+- 기존 연결 정보
+DB : arcon
+IP : 127.0.0.1
+Port : 7100
+ID : arconsa
+PW : arconsa@pass0
+
+ 
+
+- 변경 연결 정보
+DB : Eventlog
+IP : 127.0.0.1
+Port : 1433
+ID : eventsa
+PW : eventsa@pass0
+
+ 
+
+2. 테이블 정보
+기존과 동일

@@ -11,6 +11,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using System.Security.Principal;
 
 namespace SSEventLogService
 {
@@ -57,14 +58,21 @@ namespace SSEventLogService
             public override string ToString() => $"({LoadTime},{EventID},{UserName},{DomainName},{Subject},{LogonID},{PC_IPAddress},{PC_Port},{ShareName},{ShareLocalPath},{FileName},{AccessMask},{AccessList},{AccessReason},{EventTime},{Information})";
         }
 
-        static string[] LanguageFilter = new string[3];
+        private string[] LanguageFilter = new string[3];
 
-        static bool Triger = false;
-        static bool TF = true;
+        private bool Triger = false;
+        private bool TF = true;
 
-        static DateTime TC_1 = new DateTime(0);
-        static DateTime TC_2 = new DateTime(0);
-        static DateTime Ev_TC = new DateTime(0);
+        private DateTime TC_1 = new DateTime(0);
+        private DateTime TC_2 = new DateTime(0);
+        private DateTime Ev_TC = new DateTime(0);
+
+        private DateTime TrialTime = new DateTime(0);
+        private DateTime LimitTime = new DateTime(2020, 08, 27, 00, 00, 00);
+
+        private double Time_Interval = 5 * 60 * 1000;
+
+        private string UserName = "";
 
         public SSEventLogService()
         {
@@ -73,18 +81,51 @@ namespace SSEventLogService
 
         protected override void OnStart(string[] args)
         {
-            LogWrite("Service Start");
-            double Time_Interval = 5 * 60 * 1000;
-            LogWrite("Time_Interval = " + Time_Interval.ToString());
+            if (File.Exists(@"C:\EventLog\SSEvent.cfg"))
+            {
+                try
+                {
+                    string[] lines = File.ReadAllLines(@"C:\EventLog\SSEvent.cfg");
+                    UserName = lines[1];
+                }
+                catch(Exception e2)
+                {
+                    using (StreamWriter sw = new StreamWriter(@"C:\EventLog\Error.log"))
+                    {
+                        sw.WriteLine("필요한 파라메터가 없습니다.");
+                        sw.WriteLine(e2.Message);
+                        sw.Close();
+                    }
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = new StreamWriter(@"C:\EventLog\Error.log"))
+                {
+                    sw.WriteLine("필요한 파일이 없습니다.");
+                    sw.Close();
+                }
+            }
+
             Initialize();
+
+            if (DateTime.Compare(TrialTime.AddDays(7), DateTime.Now) != 1)
+                return;
+            if (DateTime.Compare(LimitTime, DateTime.Now) != 1)
+                return;
+
+            LogWrite("Service Start");
+            LogWrite("Time_Interval = " + Time_Interval.ToString());
+            
             Timer CycleTimer = new System.Timers.Timer();
-            CycleTimer.Interval = 5 * 60 * 1000;
+            CycleTimer.Interval = Time_Interval;
             CycleTimer.Elapsed += new ElapsedEventHandler(Timer_Elapsed); 
             CycleTimer.Start();
         }
 
         private void Initialize()
         {
+            TrialMode();
             LogWrite("Initialize");
             string[] LanguageTypeCheck_EN = { "Application Generated", "Certification Services", "Detailed File Share", "File Share", "File System", "Filtering Platform Connection", "Filtering Platform Packet Drop", "Handle Manipulation", "Kernel Object", "Other Object Access Events", "Registry ", "SAM", "Removable Storage" };
             string[] LanguageTypeCheck_KR = { "응용 프로그램 생성됨", "인증 서비스", "세부 파일 공유", "파일 공유", "파일 시스템", "필터링 플랫폼 연결", "필터링 플랫폼 패킷 삭제", "핸들 조작", "커널 개체", "기타 개체 액세스 이벤트", "레지스트리", "SAM", "이동식 저장소" };
@@ -150,9 +191,9 @@ namespace SSEventLogService
 
             TC_2 = TC_1;
 
-            if (File.Exists(@"C:\ARCON\aosvc.cfg"))
+            if (File.Exists(@"C:\EventLog\SSEvent.cfg"))
             {
-                StreamReader rdr = new StreamReader(@"C:\ARCON\aosvc.cfg");
+                StreamReader rdr = new StreamReader(@"C:\EventLog\SSEvent.cfg");
                 FoldertoSearch = rdr.ReadLine();
                 rdr.Close();
             }
@@ -169,7 +210,8 @@ namespace SSEventLogService
             /////  EventLog Parameter   /////
 
             /////  DBConnect Parameter   /////
-            string g_ConnectionStr = @"Data Source=192.168.10.230,7100;Initial Catalog=arcon;Integrated Security=False;User ID=arconsa;Password=arconsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
+            //string g_ConnectionStr = @"Data Source=192.168.10.230,7100;Initial Catalog=arcon;Integrated Security=False;User ID=arconsa;Password=arconsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
+            string g_ConnectionStr = @"Data Source=127.0.0.1,1433;Initial Catalog=Eventlog;Integrated Security=False;User ID=eventsa;Password=eventsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
             SqlCommand sqlCmd = new SqlCommand();
             SqlConnection sqlCon = new SqlConnection(g_ConnectionStr);
             /////  DBConnect Parameter   /////
@@ -193,7 +235,7 @@ namespace SSEventLogService
                             {
                                 if (eventInstance.Properties[6].Value.ToString().Replace(FoldertoSearch, "").Length != 0)
                                 {
-                                    nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                     nevlp.EventID = eventInstance.Id.ToString();
                                     nevlp.UserName = eventInstance.Properties[1].Value.ToString();
                                     nevlp.DomainName = eventInstance.Properties[2].Value.ToString();
@@ -208,14 +250,14 @@ namespace SSEventLogService
                                     nevlp.AccessMask = "";
                                     nevlp.AccessList = DataReplace(eventInstance.Properties[9].Value.ToString());
                                     nevlp.AccessReason = DataReplace(eventInstance.Properties[10].Value.ToString());
-                                    nevlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    nevlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                 }
                             }
                             if (eventInstance.Id.ToString() == "5145")//공유 폴더
                             {
                                 if (eventInstance.Properties[9].Value.ToString().Replace("\\", "").Length != 0 && eventInstance.TaskDisplayName.ToString() == LanguageFilter[1])
                                 {
-                                    nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                     nevlp.EventID = eventInstance.Id.ToString();
                                     nevlp.UserName = eventInstance.Properties[1].Value.ToString();
                                     nevlp.DomainName = eventInstance.Properties[2].Value.ToString();
@@ -229,7 +271,7 @@ namespace SSEventLogService
                                     nevlp.AccessMask = eventInstance.Properties[10].Value.ToString();
                                     nevlp.AccessList = DataReplace(eventInstance.Properties[11].Value.ToString());
                                     nevlp.AccessReason = DataReplace(eventInstance.Properties[12].Value.ToString());
-                                    nevlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd hh:mm:ss.sss");
+                                    nevlp.EventTime = eventInstance.TimeCreated.Value.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                     nevlp.Information = "";
                                 }
                             }
@@ -239,7 +281,8 @@ namespace SSEventLogService
                             sqlCon.Open();
                             sqlCmd.Connection = sqlCon;
 
-                            sqlCmd.CommandText = $"INSERT INTO arcon.dbo.EventLogView(LoadTime, EventID, UserName, DomainName, Subject, PC_IPAddress, PC_Port, ShareName, ShareLocalPath, FileName, AccessMask, AccessList, AccessReason, EventTime, LogonID, Information)" +
+                            //sqlCmd.CommandText = $"INSERT INTO arcon.dbo.EventLogView(LoadTime, EventID, UserName, DomainName, Subject, PC_IPAddress, PC_Port, ShareName, ShareLocalPath, FileName, AccessMask, AccessList, AccessReason, EventTime, LogonID, Information)" +
+                            sqlCmd.CommandText = $"INSERT INTO Eventlog.dbo.EventLogView(LoadTime, EventID, UserName, DomainName, Subject, PC_IPAddress, PC_Port, ShareName, ShareLocalPath, FileName, AccessMask, AccessList, AccessReason, EventTime, LogonID, Information)" +
                                                          $" VALUES ('" + nevlp.LoadTime + "','" + nevlp.EventID + "','" + nevlp.UserName + "','" + nevlp.DomainName + "','" + nevlp.Subject + "','" + nevlp.PC_IPAddress + "','" + nevlp.PC_Port + "','" + nevlp.ShareName + "','" + nevlp.ShareLocalPath + "','" + nevlp.FileName + "','" + nevlp.AccessMask + "','" + nevlp.AccessList + "','" + nevlp.AccessReason + "','" + nevlp.EventTime + "','" + nevlp.LogonID + "','" + nevlp.Information + "')";
 
                             oevlp = nevlp;
@@ -283,13 +326,15 @@ namespace SSEventLogService
         //로그 파일
         private void LogWrite(string str)
         {
-            string DirPath = @"C:\ARCON\SSEvent" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
-            string FilePath = DirPath + "\\Log_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+            string DirPath = @"C:\Users\" + UserName + @"\AppData\Roaming\EventLogView" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            string FilePath = DirPath + "\\EventLog_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
             string temp;
+            //string DirPath = @"C:\EventLog\SSEvent" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            //string FilePath = DirPath + "\\Log_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+            //string temp;
 
             DirectoryInfo di = new DirectoryInfo(DirPath);
             FileInfo fi = new FileInfo(FilePath);
-
             try
             {
                 if (!di.Exists) Directory.CreateDirectory(DirPath);
@@ -314,7 +359,39 @@ namespace SSEventLogService
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
+            }
+        }
 
+        private void TrialMode()
+        {
+            LogWrite("TrialMode");
+            string DirPath = @"C:\Users\" + UserName + @"\AppData\Roaming\EventLogView" + @"\Option\";
+            string FilePath = DirPath + "\\SerialNumber.ini";
+            string temp;
+
+            DirectoryInfo di = new DirectoryInfo(DirPath);
+            FileInfo fi = new FileInfo(FilePath);
+
+            try
+            {
+                if (!di.Exists) Directory.CreateDirectory(DirPath);
+                if (!fi.Exists)
+                {
+                    using (StreamWriter sw = new StreamWriter(FilePath))
+                    {
+                        //Trial AES256
+                        temp = string.Format("hoUX64SudQXYNJJhTKMogQ==");
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+                var info = new FileInfo(FilePath);
+                TrialTime = info.CreationTime;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
 

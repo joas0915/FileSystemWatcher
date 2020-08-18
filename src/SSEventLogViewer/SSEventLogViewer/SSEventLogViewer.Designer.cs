@@ -38,9 +38,15 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Button_IPAddress = new System.Windows.Forms.Button();
             this.TB_IPAddress = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Start_DateTime = new System.Windows.Forms.DateTimePicker();
+            this.End_DateTime = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // DB_ListView_Log
@@ -49,9 +55,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DB_ListView_Log.HideSelection = false;
-            this.DB_ListView_Log.Location = new System.Drawing.Point(12, 71);
+            this.DB_ListView_Log.Location = new System.Drawing.Point(12, 130);
             this.DB_ListView_Log.Name = "DB_ListView_Log";
-            this.DB_ListView_Log.Size = new System.Drawing.Size(1070, 467);
+            this.DB_ListView_Log.Size = new System.Drawing.Size(1001, 477);
             this.DB_ListView_Log.TabIndex = 0;
             this.DB_ListView_Log.UseCompatibleStateImageBehavior = false;
             // 
@@ -76,7 +82,7 @@
             // 
             this.groupBox1.Controls.Add(this.Button_User);
             this.groupBox1.Controls.Add(this.TB_UserName);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 71);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(330, 53);
             this.groupBox1.TabIndex = 3;
@@ -87,7 +93,7 @@
             // 
             this.groupBox2.Controls.Add(this.Button_File);
             this.groupBox2.Controls.Add(this.TB_FileName);
-            this.groupBox2.Location = new System.Drawing.Point(348, 12);
+            this.groupBox2.Location = new System.Drawing.Point(348, 71);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(330, 53);
             this.groupBox2.TabIndex = 4;
@@ -115,7 +121,7 @@
             // 
             this.groupBox3.Controls.Add(this.Button_IPAddress);
             this.groupBox3.Controls.Add(this.TB_IPAddress);
-            this.groupBox3.Location = new System.Drawing.Point(684, 12);
+            this.groupBox3.Location = new System.Drawing.Point(684, 71);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(330, 53);
             this.groupBox3.TabIndex = 5;
@@ -139,11 +145,63 @@
             this.TB_IPAddress.Size = new System.Drawing.Size(173, 21);
             this.TB_IPAddress.TabIndex = 1;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.Start_DateTime);
+            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(167, 53);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Start Date";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.End_DateTime);
+            this.groupBox5.Location = new System.Drawing.Point(185, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(157, 53);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "End Date";
+            // 
+            // Start_DateTime
+            // 
+            this.Start_DateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Start_DateTime.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.Start_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Start_DateTime.Location = new System.Drawing.Point(6, 20);
+            this.Start_DateTime.Name = "Start_DateTime";
+            this.Start_DateTime.Size = new System.Drawing.Size(155, 21);
+            this.Start_DateTime.TabIndex = 0;
+            // 
+            // End_DateTime
+            // 
+            this.End_DateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.End_DateTime.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.End_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.End_DateTime.Location = new System.Drawing.Point(6, 20);
+            this.End_DateTime.Name = "End_DateTime";
+            this.End_DateTime.Size = new System.Drawing.Size(145, 21);
+            this.End_DateTime.TabIndex = 0;
+            // 
             // SSEventLogViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 550);
+            this.ClientSize = new System.Drawing.Size(1025, 634);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -156,6 +214,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -172,6 +232,10 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button Button_IPAddress;
         private System.Windows.Forms.TextBox TB_IPAddress;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DateTimePicker Start_DateTime;
+        private System.Windows.Forms.DateTimePicker End_DateTime;
     }
 }
 
