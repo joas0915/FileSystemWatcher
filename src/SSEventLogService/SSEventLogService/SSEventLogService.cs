@@ -81,16 +81,16 @@ namespace SSEventLogService
 
         protected override void OnStart(string[] args)
         {
-            if (File.Exists(@"C:\EventLog\SSEvent.cfg"))
+            if (File.Exists(@"C:\SSEvent\EventLog\SSEvent.cfg"))
             {
                 try
                 {
-                    string[] lines = File.ReadAllLines(@"C:\EventLog\SSEvent.cfg");
+                    string[] lines = File.ReadAllLines(@"C:\SSEvent\EventLog\SSEvent.cfg");
                     UserName = lines[1];
                 }
                 catch(Exception e2)
                 {
-                    using (StreamWriter sw = new StreamWriter(@"C:\EventLog\Error.log"))
+                    using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
                     {
                         sw.WriteLine("필요한 파라메터가 없습니다.");
                         sw.WriteLine(e2.Message);
@@ -100,7 +100,7 @@ namespace SSEventLogService
             }
             else
             {
-                using (StreamWriter sw = new StreamWriter(@"C:\EventLog\Error.log"))
+                using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
                 {
                     sw.WriteLine("필요한 파일이 없습니다.");
                     sw.Close();
@@ -109,10 +109,27 @@ namespace SSEventLogService
 
             Initialize();
 
+
             if (DateTime.Compare(TrialTime.AddDays(7), DateTime.Now) != 1)
+            {
+                using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
+                {
+                    sw.WriteLine("기간이 만료되었습니다.");
+                    sw.Close();
+                }
                 return;
+            }
+
             if (DateTime.Compare(LimitTime, DateTime.Now) != 1)
+            {
+                using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
+                {
+                    sw.WriteLine("기간이 만료되었습니다.");
+                    sw.Close();
+                }
                 return;
+            }
+
 
             LogWrite("Service Start");
             LogWrite("Time_Interval = " + Time_Interval.ToString());
@@ -191,9 +208,9 @@ namespace SSEventLogService
 
             TC_2 = TC_1;
 
-            if (File.Exists(@"C:\EventLog\SSEvent.cfg"))
+            if (File.Exists(@"C:\SSEvent\EventLog\SSEvent.cfg"))
             {
-                StreamReader rdr = new StreamReader(@"C:\EventLog\SSEvent.cfg");
+                StreamReader rdr = new StreamReader(@"C:\SSEvent\EventLog\SSEvent.cfg");
                 FoldertoSearch = rdr.ReadLine();
                 rdr.Close();
             }

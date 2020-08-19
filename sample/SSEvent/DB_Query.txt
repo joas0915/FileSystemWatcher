@@ -1,0 +1,140 @@
+----------------데이터베이스 생성--------------------
+
+USE [master]
+GO
+
+/****** Object:  Database [EventLog]    Script Date: 08/18/2020 23:50:00 ******/
+CREATE DATABASE [EventLog] ON  PRIMARY 
+( NAME = N'EventLog', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\EventLog.mdf' , SIZE = 3072KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'EventLog_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\EventLog_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+
+ALTER DATABASE [EventLog] SET COMPATIBILITY_LEVEL = 100
+GO
+
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [EventLog].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+
+ALTER DATABASE [EventLog] SET ANSI_NULL_DEFAULT OFF 
+GO
+
+ALTER DATABASE [EventLog] SET ANSI_NULLS OFF 
+GO
+
+ALTER DATABASE [EventLog] SET ANSI_PADDING OFF 
+GO
+
+ALTER DATABASE [EventLog] SET ANSI_WARNINGS OFF 
+GO
+
+ALTER DATABASE [EventLog] SET ARITHABORT OFF 
+GO
+
+ALTER DATABASE [EventLog] SET AUTO_CLOSE OFF 
+GO
+
+ALTER DATABASE [EventLog] SET AUTO_CREATE_STATISTICS ON 
+GO
+
+ALTER DATABASE [EventLog] SET AUTO_SHRINK OFF 
+GO
+
+ALTER DATABASE [EventLog] SET AUTO_UPDATE_STATISTICS ON 
+GO
+
+ALTER DATABASE [EventLog] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+
+ALTER DATABASE [EventLog] SET CURSOR_DEFAULT  GLOBAL 
+GO
+
+ALTER DATABASE [EventLog] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+
+ALTER DATABASE [EventLog] SET NUMERIC_ROUNDABORT OFF 
+GO
+
+ALTER DATABASE [EventLog] SET QUOTED_IDENTIFIER OFF 
+GO
+
+ALTER DATABASE [EventLog] SET RECURSIVE_TRIGGERS OFF 
+GO
+
+ALTER DATABASE [EventLog] SET  DISABLE_BROKER 
+GO
+
+ALTER DATABASE [EventLog] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+
+ALTER DATABASE [EventLog] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+
+ALTER DATABASE [EventLog] SET TRUSTWORTHY OFF 
+GO
+
+ALTER DATABASE [EventLog] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+
+ALTER DATABASE [EventLog] SET PARAMETERIZATION SIMPLE 
+GO
+
+ALTER DATABASE [EventLog] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+
+ALTER DATABASE [EventLog] SET HONOR_BROKER_PRIORITY OFF 
+GO
+
+ALTER DATABASE [EventLog] SET  READ_WRITE 
+GO
+
+ALTER DATABASE [EventLog] SET RECOVERY FULL 
+GO
+
+ALTER DATABASE [EventLog] SET  MULTI_USER 
+GO
+
+ALTER DATABASE [EventLog] SET PAGE_VERIFY CHECKSUM  
+GO
+
+ALTER DATABASE [EventLog] SET DB_CHAINING OFF 
+GO
+
+----------------테이블 생성--------------------
+
+USE [EventLog]
+GO
+
+/****** Object:  Table [dbo].[EventLogView]    Script Date: 08/18/2020 23:48:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[EventLogView](
+	[LoadTime] [datetime] NOT NULL,
+	[EventID] [int] NOT NULL,
+	[UserName] [nvarchar](128) NOT NULL,
+	[DomainName] [nvarchar](128) NOT NULL,
+	[Subject] [nvarchar](128) NOT NULL,
+	[PC_IPAddress] [nvarchar](64) NOT NULL,
+	[PC_Port] [int] NOT NULL,
+	[ShareName] [nvarchar](1024) NOT NULL,
+	[ShareLocalPath] [nvarchar](1024) NOT NULL,
+	[FileName] [nvarchar](1024) NOT NULL,
+	[AccessMask] [nvarchar](512) NOT NULL,
+	[AccessList] [nvarchar](1024) NOT NULL,
+	[AccessReason] [nvarchar](1024) NOT NULL,
+	[EventTime] [datetime] NOT NULL,
+	[LogonID] [nvarchar](256) NOT NULL,
+	[Information] [nvarchar](256) NOT NULL
+) ON [PRIMARY]
+
+GO
+
+
+

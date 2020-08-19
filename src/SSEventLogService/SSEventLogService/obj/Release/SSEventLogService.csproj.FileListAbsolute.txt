@@ -7,3 +7,4 @@ C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLog
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\bin\AnyCPU\Release\SSEventLogService.exe.config
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\bin\AnyCPU\Release\SSEventLogService.exe
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\bin\AnyCPU\Release\SSEventLogService.pdb
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogService\SSEventLogService\obj\Release\SSEventLogService.csprojAssemblyReference.cache

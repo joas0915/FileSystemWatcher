@@ -8,3 +8,4 @@ C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogV
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\obj\Release\SSEventLogViewer.pdb
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\bin\AnyCPU\Release\SSEventLogViewer.exe
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\bin\AnyCPU\Release\SSEventLogViewer.pdb
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSEventLogViewer\SSEventLogViewer\obj\Release\SSEventLogViewer.csprojAssemblyReference.cache

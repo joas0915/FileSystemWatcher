@@ -25,19 +25,19 @@ namespace SSEventLogViewer
             Initialize();
         }
 
-        //private string g_ConnectionStr = @"Data Source=192.168.10.230,7100;Initial Catalog=arcon;Integrated Security=False;User ID=arconsa;Password=arconsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
-        private string g_ConnectionStr = @"Data Source=127.0.0.1,1433;Initial Catalog=Eventlog;Integrated Security=False;User ID=eventsa;Password=eventsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
+        private string g_ConnectionStr = @"Data Source=192.168.10.230,7100;Initial Catalog=arcon;Integrated Security=False;User ID=arconsa;Password=arconsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
+        //private string g_ConnectionStr = @"Data Source=127.0.0.1,1433;Initial Catalog=Eventlog;Integrated Security=False;User ID=eventsa;Password=eventsa@pass0;Connect Timeout=5;Encrypt=False;TrustServerCertificate=False";
 
         private void Initialize()
         {
-            if (File.Exists(@"C:\EventLog\SSEvent.cfg"))
+            if (File.Exists(@"C:\SSEvent\EventLog\SSEvent.cfg"))
             {
-                string[] lines = File.ReadAllLines(@"C:\EventLog\SSEvent.cfg");
+                string[] lines = File.ReadAllLines(@"C:\SSEvent\EventLog\SSEvent.cfg");
                 UserName = lines[1]; // or whatever.
             }
             else
             {
-                using (StreamWriter sw = new StreamWriter(@"C:\EventLog\Error.log"))
+                using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
                 {
                     sw.WriteLine("필요한 파일이 없습니다.");
                     sw.Close();
@@ -47,9 +47,24 @@ namespace SSEventLogViewer
             TrialMode();
 
             if (DateTime.Compare(TrialTime.AddDays(7), DateTime.Now) != 1)
+            {
+                using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
+                {
+                    sw.WriteLine("기간이 만료되었습니다.");
+                    sw.Close();
+                }
                 Environment.Exit(0);
+            }
+
             if (DateTime.Compare(LimitTime, DateTime.Now) != 1)
+            { 
+                using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))    
+                {
+                    sw.WriteLine("기간이 만료되었습니다.");
+                    sw.Close();
+                }
                 Environment.Exit(0);
+            }
 
             DB_ListView_Log.Clear();
             DB_ListView_Log.View = View.Details;
@@ -71,6 +86,7 @@ namespace SSEventLogViewer
             DB_ListView_Log.Columns.Add("EventTime", 150);
             DB_ListView_Log.Columns.Add("LogonID", 50);
             DB_ListView_Log.Columns.Add("Information", 50);
+            DB_ListView_Log.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void TrialMode()
@@ -104,6 +120,38 @@ namespace SSEventLogViewer
             }
         }
 
+        private string WordFilter(string t_Getstring)
+        {
+            t_Getstring = t_Getstring.Replace("ReadData","파일 데이터를 읽을 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("WriteData","파일에 데이터를 쓸 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("AppendData","파일에 데이터를 추가할 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("ReadEA","파일 특성을 읽을 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("WriteEA", "파일 특성을 쓸 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("ReadAttributes","파일 특성을 읽을 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("WriteAttributes","파일 특성을 쓸 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("DeleteChild","렉터리와 여기에 포함 된 모든 파일을 삭제할 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("DELETE","개체를 삭제할 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("READ_CONTROL","개체의 보안 설명자에 있는 정보를 읽을 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("WRITE_DAC","개체의 보안 설명자에서 DACL (임의 액세스 제어 목록)을 수정할 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("WRITE_OWNER","개체의 보안 설명자에서 소유자를 변경할 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("항목과","동기화에 개체를 사용할 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("SYNCHRONIZER","동기화에 개체를 사용할 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("SYNCHRONIZE","동기화에 개체를 사용할 수 있는 권한, ");
+            t_Getstring = t_Getstring.Replace("ACCESS_SYS_SEC","개체의 보안 설명자에서 SACL을 가져오거나 설정 하는 기능을 제어, ");
+
+            //()내용삭제
+            int m_FindFront = 0;
+            int m_FindBack = 0;
+            while (m_FindFront != -1)
+            {
+                m_FindFront = t_Getstring.IndexOf('(');
+                m_FindBack = t_Getstring.IndexOf(')');
+                if(m_FindFront != -1 || m_FindBack != -1)
+                    t_Getstring = t_Getstring.Remove(m_FindFront,(m_FindBack - m_FindFront+1));
+            }
+            return t_Getstring;
+        }
+
         private void Button_User_Click(object sender, EventArgs e)
         {
             Initialize();
@@ -127,7 +175,7 @@ namespace SSEventLogViewer
                 {
                     if (m_User == "")
                         break;
-                    ListViewItem AddList = new ListViewItem(new string[] { sqlRed.GetDateTime(0).ToString(), sqlRed.GetInt32(1).ToString(), sqlRed.GetString(2).ToString(), sqlRed.GetString(3).ToString(), sqlRed.GetString(4).ToString(), sqlRed.GetString(5).ToString(), sqlRed.GetInt32(6).ToString(), sqlRed.GetString(7).ToString(), sqlRed.GetString(8).ToString(), sqlRed.GetString(9).ToString(), sqlRed.GetString(10).ToString(), sqlRed.GetString(11).ToString(), sqlRed.GetString(12).ToString(), sqlRed.GetDateTime(13).ToString(), sqlRed.GetString(14).ToString(), sqlRed.GetString(15).ToString()});
+                    ListViewItem AddList = new ListViewItem(new string[] { sqlRed.GetDateTime(0).ToString(), sqlRed.GetInt32(1).ToString(), sqlRed.GetString(2).ToString(), sqlRed.GetString(3).ToString(), sqlRed.GetString(4).ToString(), sqlRed.GetString(5).ToString(), sqlRed.GetInt32(6).ToString(), sqlRed.GetString(7).ToString(), sqlRed.GetString(8).ToString(), sqlRed.GetString(9).ToString(), sqlRed.GetString(10).ToString(), WordFilter(sqlRed.GetString(11).ToString()), WordFilter(sqlRed.GetString(12).ToString()), sqlRed.GetDateTime(13).ToString(), sqlRed.GetString(14).ToString(), sqlRed.GetString(15).ToString()});
                     DB_ListView_Log.Items.Add(AddList);
                 }
                 //sqlCmd.ExecuteNonQuery();
@@ -162,7 +210,7 @@ namespace SSEventLogViewer
                 {
                     if (m_File == "")
                         break;
-                    ListViewItem AddList = new ListViewItem(new string[] { sqlRed.GetDateTime(0).ToString(), sqlRed.GetInt32(1).ToString(), sqlRed.GetString(2).ToString(), sqlRed.GetString(3).ToString(), sqlRed.GetString(4).ToString(), sqlRed.GetString(5).ToString(), sqlRed.GetInt32(6).ToString(), sqlRed.GetString(7).ToString(), sqlRed.GetString(8).ToString(), sqlRed.GetString(9).ToString(), sqlRed.GetString(10).ToString(), sqlRed.GetString(11).ToString(), sqlRed.GetString(12).ToString(), sqlRed.GetDateTime(13).ToString(), sqlRed.GetString(14).ToString(), sqlRed.GetString(15).ToString()});
+                    ListViewItem AddList = new ListViewItem(new string[] { sqlRed.GetDateTime(0).ToString(), sqlRed.GetInt32(1).ToString(), sqlRed.GetString(2).ToString(), sqlRed.GetString(3).ToString(), sqlRed.GetString(4).ToString(), sqlRed.GetString(5).ToString(), sqlRed.GetInt32(6).ToString(), sqlRed.GetString(7).ToString(), sqlRed.GetString(8).ToString(), sqlRed.GetString(9).ToString(), sqlRed.GetString(10).ToString(), WordFilter(sqlRed.GetString(11).ToString()), WordFilter(sqlRed.GetString(12).ToString()), sqlRed.GetDateTime(13).ToString(), sqlRed.GetString(14).ToString(), sqlRed.GetString(15).ToString() });
                     DB_ListView_Log.Items.Add(AddList);
                 }
                 //sqlCmd.ExecuteNonQuery();
@@ -197,7 +245,7 @@ namespace SSEventLogViewer
                 {
                     if (m_Address == "")
                         break;
-                    ListViewItem AddList = new ListViewItem(new string[] { sqlRed.GetDateTime(0).ToString(), sqlRed.GetInt32(1).ToString(), sqlRed.GetString(2).ToString(), sqlRed.GetString(3).ToString(), sqlRed.GetString(4).ToString(), sqlRed.GetString(5).ToString(), sqlRed.GetInt32(6).ToString(), sqlRed.GetString(7).ToString(), sqlRed.GetString(8).ToString(), sqlRed.GetString(9).ToString(), sqlRed.GetString(10).ToString(), sqlRed.GetString(11).ToString(), sqlRed.GetString(12).ToString(), sqlRed.GetDateTime(13).ToString(), sqlRed.GetString(14).ToString(), sqlRed.GetString(15).ToString() });
+                    ListViewItem AddList = new ListViewItem(new string[] { sqlRed.GetDateTime(0).ToString(), sqlRed.GetInt32(1).ToString(), sqlRed.GetString(2).ToString(), sqlRed.GetString(3).ToString(), sqlRed.GetString(4).ToString(), sqlRed.GetString(5).ToString(), sqlRed.GetInt32(6).ToString(), sqlRed.GetString(7).ToString(), sqlRed.GetString(8).ToString(), sqlRed.GetString(9).ToString(), sqlRed.GetString(10).ToString(), WordFilter(sqlRed.GetString(11).ToString()), WordFilter(sqlRed.GetString(12).ToString()), sqlRed.GetDateTime(13).ToString(), sqlRed.GetString(14).ToString(), sqlRed.GetString(15).ToString() });
                     DB_ListView_Log.Items.Add(AddList);
                 }
                 //sqlCmd.ExecuteNonQuery();
