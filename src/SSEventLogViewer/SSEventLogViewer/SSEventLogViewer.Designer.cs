@@ -39,8 +39,8 @@
             this.Button_IPAddress = new System.Windows.Forms.Button();
             this.TB_IPAddress = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.Start_DateTime = new System.Windows.Forms.DateTimePicker();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.End_DateTime = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,6 +80,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.Button_User);
             this.groupBox1.Controls.Add(this.TB_UserName);
             this.groupBox1.Location = new System.Drawing.Point(12, 71);
@@ -91,6 +94,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.Button_File);
             this.groupBox2.Controls.Add(this.TB_FileName);
             this.groupBox2.Location = new System.Drawing.Point(348, 71);
@@ -119,6 +125,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.Button_IPAddress);
             this.groupBox3.Controls.Add(this.TB_IPAddress);
             this.groupBox3.Location = new System.Drawing.Point(684, 71);
@@ -158,6 +167,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Start Date";
             // 
+            // Start_DateTime
+            // 
+            this.Start_DateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Start_DateTime.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.Start_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Start_DateTime.Location = new System.Drawing.Point(6, 20);
+            this.Start_DateTime.Name = "Start_DateTime";
+            this.Start_DateTime.Size = new System.Drawing.Size(155, 21);
+            this.Start_DateTime.TabIndex = 0;
+            // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -170,18 +191,6 @@
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "End Date";
-            // 
-            // Start_DateTime
-            // 
-            this.Start_DateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Start_DateTime.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.Start_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Start_DateTime.Location = new System.Drawing.Point(6, 20);
-            this.Start_DateTime.Name = "Start_DateTime";
-            this.Start_DateTime.Size = new System.Drawing.Size(155, 21);
-            this.Start_DateTime.TabIndex = 0;
             // 
             // End_DateTime
             // 
@@ -206,6 +215,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DB_ListView_Log);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "SSEventLogViewer";
             this.Text = "SSEventLogViewer";
             this.groupBox1.ResumeLayout(false);

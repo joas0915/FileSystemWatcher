@@ -57,8 +57,13 @@ namespace SSFSW
         }
 
         static string[] LanguageFilter = new string[3];
+        static string g_FoldertoSearch = "";
+        static string g_UserName = "";
+        static string g_FSWLog = "";
+
         static bool Triger = false;
         static bool TF = true;
+
         static DateTime TC_1 = new DateTime(0);
         static DateTime TC_2 = new DateTime(0);
         static DateTime Ev_TC = new DateTime(0);
@@ -67,7 +72,6 @@ namespace SSFSW
         static DateTime LimitTime = new DateTime(2020,08,27,00,00,00);
 
         static string[] lines = null;
-        static string UserName = "";
 
         static void InsertEventLog()
         {
@@ -86,16 +90,14 @@ namespace SSFSW
             EvLogPara nevlp = new EvLogPara("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
             EvLogPara oevlp = new EvLogPara("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
 
-            string FoldertoSearch = "";
-
             TC_2 = TC_1;
 
-            if (File.Exists(@"C:\ARCON\aosvc.cfg"))
-            {
-                StreamReader rdr = new StreamReader(@"C:\ARCON\aosvc.cfg");
-                FoldertoSearch = rdr.ReadLine();
-                rdr.Close();
-            }
+            //if (File.Exists(@"C:\ARCON\aosvc.cfg"))
+            //{
+            //    StreamReader rdr = new StreamReader(@"C:\ARCON\aosvc.cfg");
+            //    FoldertoSearch = rdr.ReadLine();
+            //    rdr.Close();
+            //}
 
             StringBuilder sb = new StringBuilder();
             const string queryString = @"<QueryList>
@@ -116,7 +118,7 @@ namespace SSFSW
             {
                 foreach (var VARIABLE in eventInstance.Properties)
                 {
-                    if (!VARIABLE.Value.ToString().Contains(FoldertoSearch))
+                    if (!VARIABLE.Value.ToString().Contains(g_FoldertoSearch))
                         continue;
                     if (!TF)
                     {
@@ -129,7 +131,7 @@ namespace SSFSW
                         {
                             if (eventInstance.Id.ToString() == "4656")//본인 PC
                             {
-                                if (eventInstance.Properties[6].Value.ToString().Replace(FoldertoSearch, "").Length != 0)
+                                if (eventInstance.Properties[6].Value.ToString().Replace(g_FoldertoSearch, "").Length != 0)
                                 {
                                     nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                     nevlp.EventID = eventInstance.Id.ToString();
@@ -237,25 +239,39 @@ namespace SSFSW
 
         static void Main(string[] args)
         {
-            if (File.Exists(@"C:\ARCON\aosvc.cfg"))
+            if (File.Exists(@"C:\SSEvent\EventLog\SSEvent.cfg"))
             {
-                lines = File.ReadAllLines(@"C:\ARCON\aosvc.cfg");
-                UserName = lines[1]; // or whatever.
+                try
+                {
+                    string[] lines = File.ReadAllLines(@"C:\SSEvent\EventLog\SSEvent.cfg");
+                    g_FoldertoSearch = lines[0];
+                    g_UserName = lines[1];
+                }
+                catch (Exception e2)
+                {
+                    using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
+                    {
+                        sw.WriteLine("필요한 파라메터가 없습니다.");
+                        sw.WriteLine(e2.Message);
+                        sw.Close();
+                    }
+                }
             }
 
-            Initialize();
-            if (DateTime.Compare(TrialTime.AddDays(7), DateTime.Now) != 1)
-                return;
-            if (DateTime.Compare(LimitTime, DateTime.Now) != 1)
-                return;
-
-            Console.WriteLine("Start");
-            LogWrite("Start");
-            Timer CycleTimer = new System.Timers.Timer();
-            //CycleTimer.Interval = 5 * 60 * 1000;
-            CycleTimer.Interval = 5000;
-            CycleTimer.Elapsed += new ElapsedEventHandler(timer_Elapsed); 
-            CycleTimer.Start();
+            //Initialize();
+            //if (DateTime.Compare(TrialTime.AddDays(7), DateTime.Now) != 1)
+            //    return;
+            //if (DateTime.Compare(LimitTime, DateTime.Now) != 1)
+            //    return;
+            //
+            //Console.WriteLine("Start");
+            //LogWrite("Start");
+            //Timer CycleTimer = new System.Timers.Timer();
+            ////CycleTimer.Interval = 5 * 60 * 1000;
+            //CycleTimer.Interval = 5000;
+            //CycleTimer.Elapsed += new ElapsedEventHandler(timer_Elapsed); 
+            //CycleTimer.Start();
+            FileWatch();
 
             Console.Read();
         }
@@ -303,10 +319,49 @@ namespace SSFSW
             }
         }
 
+        static void FileWatchLogWrite(string str)
+        {
+            string DirPath = @"C:\Users\" + g_UserName + @"\AppData\Roaming\EventLogView" + @"\FileWatchLog\" + DateTime.Today.ToString("yyyyMMdd");
+            string FilePath = DirPath + "\\EventLog_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+            string temp;
+            //string DirPath = @"C:\EventLog\SSEvent" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            //string FilePath = DirPath + "\\Log_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+            //string temp;
+
+            DirectoryInfo di = new DirectoryInfo(DirPath);
+            FileInfo fi = new FileInfo(FilePath);
+            try
+            {
+                if (!di.Exists) Directory.CreateDirectory(DirPath);
+                if (!fi.Exists)
+                {
+                    using (StreamWriter sw = new StreamWriter(FilePath))
+                    {
+                        temp = string.Format("[{0}] {1}", DateTime.Now, str);
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(FilePath))
+                    {
+                        temp = string.Format("[{0}] {1}", DateTime.Now, str);
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
         //로그 파일
         static void LogWrite(string str)
         {
-            string DirPath = @"C:\Users\"+(System.Security.Principal.WindowsIdentity.GetCurrent().Name).Split('\\')[1]+@"\AppData\Roaming\EventLogView" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            string DirPath = @"C:\Users\"+ g_UserName + @"\AppData\Roaming\EventLogView" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
             //string DirPath = @"C:\Users\Lee\AppData\Roaming\EventLogView" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
             string FilePath = DirPath + "\\EventLog_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
             string temp;
@@ -344,7 +399,7 @@ namespace SSFSW
 
         static void TrialMode()
         {
-            string DirPath = @"C:\Users\" + (System.Security.Principal.WindowsIdentity.GetCurrent().Name).Split('\\')[1] + @"\AppData\Roaming\EventLogView" + @"\Option\";
+            string DirPath = @"C:\Users\" + g_UserName + @"\AppData\Roaming\EventLogView" + @"\Option\";
             string FilePath = DirPath + "\\SerialNumber.ini";
             string temp;
 
@@ -400,6 +455,33 @@ namespace SSFSW
 
             return m_Data;
         }
+
+        static void FileWatch()
+        {
+            FileSystemWatcher fsw = new FileSystemWatcher(g_FoldertoSearch);
+            fsw.NotifyFilter = NotifyFilters.FileName |
+                NotifyFilters.DirectoryName |
+                NotifyFilters.Size |
+                NotifyFilters.LastAccess |
+                NotifyFilters.CreationTime |
+                NotifyFilters.Security |
+                NotifyFilters.LastWrite;
+            fsw.Filter = "*.*"; ; //감시할 파일 유형 선택 예) *.* 모든 파일 
+            fsw.Renamed += new RenamedEventHandler(Renamed);
+            fsw.Created += new FileSystemEventHandler(Created);
+            fsw.Changed += new FileSystemEventHandler(Changed);
+            fsw.Deleted += new FileSystemEventHandler(Deleted);
+
+            fsw.EnableRaisingEvents = true;
+
+            Console.WriteLine("Wait until File Created ~~~");
+            Console.Read();
+        }
+
+        private static void Created(object sender, FileSystemEventArgs e) { g_FSWLog = String.Format("{0} {1}", e.ChangeType.ToString(), e.FullPath); FileWatchLogWrite(g_FSWLog); }
+        private static void Deleted(object sender, FileSystemEventArgs e) { g_FSWLog = String.Format("{0} {1}", e.ChangeType.ToString(), e.FullPath); FileWatchLogWrite(g_FSWLog); }
+        private static void Changed(object source, FileSystemEventArgs e) { g_FSWLog = String.Format("{0} {1}", e.ChangeType.ToString(), e.FullPath); FileWatchLogWrite(g_FSWLog); }
+        private static void Renamed(object source, RenamedEventArgs e) { g_FSWLog = String.Format("{0} {1}", e.ChangeType.ToString(), e.FullPath); FileWatchLogWrite(g_FSWLog); }
 
         static bool hasing(EvLogPara t_OldData, EvLogPara t_NewDate)
         {

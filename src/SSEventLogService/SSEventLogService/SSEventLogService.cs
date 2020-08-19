@@ -58,21 +58,25 @@ namespace SSEventLogService
             public override string ToString() => $"({LoadTime},{EventID},{UserName},{DomainName},{Subject},{LogonID},{PC_IPAddress},{PC_Port},{ShareName},{ShareLocalPath},{FileName},{AccessMask},{AccessList},{AccessReason},{EventTime},{Information})";
         }
 
-        private string[] LanguageFilter = new string[3];
+        private string[] g_LanguageFilter = new string[3];
 
-        private bool Triger = false;
-        private bool TF = true;
+        private string g_FoldertoSearch = "";
 
-        private DateTime TC_1 = new DateTime(0);
-        private DateTime TC_2 = new DateTime(0);
-        private DateTime Ev_TC = new DateTime(0);
+        private string g_UserName = "";
 
-        private DateTime TrialTime = new DateTime(0);
-        private DateTime LimitTime = new DateTime(2020, 08, 27, 00, 00, 00);
+        private string g_FSWLog = "";
 
-        private double Time_Interval = 5 * 60 * 1000;
+        private bool g_Triger = false;
+        private bool g_TF = true;
 
-        private string UserName = "";
+        private DateTime g_TC_1 = new DateTime(0);
+        private DateTime g_TC_2 = new DateTime(0);
+        private DateTime g_Ev_TC = new DateTime(0);
+
+        private DateTime g_TrialTime = new DateTime(0);
+        private DateTime g_LimitTime = new DateTime(2020, 08, 27, 00, 00, 00);
+
+        private double g_Time_Interval = 5 * 60 * 1000;
 
         public SSEventLogService()
         {
@@ -86,7 +90,8 @@ namespace SSEventLogService
                 try
                 {
                     string[] lines = File.ReadAllLines(@"C:\SSEvent\EventLog\SSEvent.cfg");
-                    UserName = lines[1];
+                    g_FoldertoSearch = lines[0];
+                    g_UserName = lines[1];
                 }
                 catch(Exception e2)
                 {
@@ -109,8 +114,7 @@ namespace SSEventLogService
 
             Initialize();
 
-
-            if (DateTime.Compare(TrialTime.AddDays(7), DateTime.Now) != 1)
+            if (DateTime.Compare(g_TrialTime.AddDays(7), DateTime.Now) != 1)
             {
                 using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
                 {
@@ -120,7 +124,7 @@ namespace SSEventLogService
                 return;
             }
 
-            if (DateTime.Compare(LimitTime, DateTime.Now) != 1)
+            if (DateTime.Compare(g_LimitTime, DateTime.Now) != 1)
             {
                 using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
                 {
@@ -129,13 +133,13 @@ namespace SSEventLogService
                 }
                 return;
             }
-
-
+            
+            FileWatch();
             LogWrite("Service Start");
-            LogWrite("Time_Interval = " + Time_Interval.ToString());
+            LogWrite("Time_Interval = " + g_Time_Interval.ToString());
             
             Timer CycleTimer = new System.Timers.Timer();
-            CycleTimer.Interval = Time_Interval;
+            CycleTimer.Interval = g_Time_Interval;
             CycleTimer.Elapsed += new ElapsedEventHandler(Timer_Elapsed); 
             CycleTimer.Start();
         }
@@ -164,18 +168,18 @@ namespace SSEventLogService
                         if (eventInstance.TaskDisplayName.ToString() == LanguageTypeCheck_EN[i])
                         {
                             m_Flag = false;
-                            LanguageFilter[0] = "File System";
-                            LanguageFilter[1] = "Detailed File Share";
-                            LanguageFilter[2] = "Removable Storage";
+                            g_LanguageFilter[0] = "File System";
+                            g_LanguageFilter[1] = "Detailed File Share";
+                            g_LanguageFilter[2] = "Removable Storage";
                             LogWrite("LanguageTypeCheck = English");
                             //Console.WriteLine("English");
                         }
                         if (eventInstance.TaskDisplayName.ToString() == LanguageTypeCheck_KR[i])
                         {
                             m_Flag = false;
-                            LanguageFilter[0] = "파일 시스템";
-                            LanguageFilter[1] = "세부 파일 공유";
-                            LanguageFilter[2] = "이동식 저장소";
+                            g_LanguageFilter[0] = "파일 시스템";
+                            g_LanguageFilter[1] = "세부 파일 공유";
+                            g_LanguageFilter[2] = "이동식 저장소";
                             LogWrite("LanguageTypeCheck = Korean");
                             //Console.WriteLine("Korean");
                         }
@@ -188,7 +192,7 @@ namespace SSEventLogService
 
         private void InsertEventLog()
         {
-            if (Triger)
+            if (g_Triger)
             {
                 LogWrite("InsertEventLog Already Start");
                 return;
@@ -196,7 +200,7 @@ namespace SSEventLogService
             else
             {
                 LogWrite("InsertEventLog Start");
-                Triger = true;
+                g_Triger = true;
             }
 
             
@@ -204,16 +208,14 @@ namespace SSEventLogService
             EvLogPara nevlp = new EvLogPara("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
             EvLogPara oevlp = new EvLogPara("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
 
-            string FoldertoSearch = "";
+            g_TC_2 = g_TC_1;
 
-            TC_2 = TC_1;
-
-            if (File.Exists(@"C:\SSEvent\EventLog\SSEvent.cfg"))
-            {
-                StreamReader rdr = new StreamReader(@"C:\SSEvent\EventLog\SSEvent.cfg");
-                FoldertoSearch = rdr.ReadLine();
-                rdr.Close();
-            }
+            //if (File.Exists(@"C:\SSEvent\EventLog\SSEvent.cfg"))
+            //{
+            //    StreamReader rdr = new StreamReader(@"C:\SSEvent\EventLog\SSEvent.cfg");
+            //    FoldertoSearch = rdr.ReadLine();
+            //    rdr.Close();
+            //}
 
             StringBuilder sb = new StringBuilder();
             const string queryString = @"<QueryList>
@@ -237,20 +239,20 @@ namespace SSEventLogService
             {
                 foreach (var VARIABLE in eventInstance.Properties)
                 {
-                    if (!VARIABLE.Value.ToString().Contains(FoldertoSearch))
+                    if (!VARIABLE.Value.ToString().Contains(g_FoldertoSearch))
                         continue;
-                    if (!TF)
+                    if (!g_TF)
                     {
-                        if (DateTime.Compare(TC_2, (DateTime)eventInstance.TimeCreated) != -1)
+                        if (DateTime.Compare(g_TC_2, (DateTime)eventInstance.TimeCreated) != -1)
                             continue;
                     }
                     try
                     {
-                        if ((eventInstance.TaskDisplayName.ToString() == LanguageFilter[0] || eventInstance.TaskDisplayName.ToString() == LanguageFilter[1] || eventInstance.TaskDisplayName.ToString() == LanguageFilter[2]))
+                        if ((eventInstance.TaskDisplayName.ToString() == g_LanguageFilter[0] || eventInstance.TaskDisplayName.ToString() == g_LanguageFilter[1] || eventInstance.TaskDisplayName.ToString() == g_LanguageFilter[2]))
                         {
                             if (eventInstance.Id.ToString() == "4656")//본인 PC
                             {
-                                if (eventInstance.Properties[6].Value.ToString().Replace(FoldertoSearch, "").Length != 0)
+                                if (eventInstance.Properties[6].Value.ToString().Replace(g_FoldertoSearch, "").Length != 0)
                                 {
                                     nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                     nevlp.EventID = eventInstance.Id.ToString();
@@ -272,7 +274,7 @@ namespace SSEventLogService
                             }
                             if (eventInstance.Id.ToString() == "5145")//공유 폴더
                             {
-                                if (eventInstance.Properties[9].Value.ToString().Replace("\\", "").Length != 0 && eventInstance.TaskDisplayName.ToString() == LanguageFilter[1])
+                                if (eventInstance.Properties[9].Value.ToString().Replace("\\", "").Length != 0 && eventInstance.TaskDisplayName.ToString() == g_LanguageFilter[1])
                                 {
                                     nevlp.LoadTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss");
                                     nevlp.EventID = eventInstance.Id.ToString();
@@ -306,9 +308,9 @@ namespace SSEventLogService
                             sqlCmd.ExecuteNonQuery();
                             sqlCon.Close();
 
-                            if (DateTime.Compare(TC_1, (DateTime)eventInstance.TimeCreated) == -1)
-                                TC_1 = (DateTime)eventInstance.TimeCreated;
-                            TF = false;
+                            if (DateTime.Compare(g_TC_1, (DateTime)eventInstance.TimeCreated) == -1)
+                                g_TC_1 = (DateTime)eventInstance.TimeCreated;
+                            g_TF = false;
                             LogWrite("InsertEventLog InserData");
                         }
                     }
@@ -320,7 +322,7 @@ namespace SSEventLogService
                     }
                 }
             }
-            Triger = false;
+            g_Triger = false;
             LogWrite("InsertEventLog End");
             //Event Delete
             //eventsQuery.Session.ClearLog("Security");
@@ -331,6 +333,32 @@ namespace SSEventLogService
             InsertEventLog();
         }
 
+        private void FileWatch()
+        {
+            LogWrite("FSW Start");
+            FileSystemWatcher fsw = new FileSystemWatcher(g_FoldertoSearch);
+            fsw.NotifyFilter = NotifyFilters.FileName |
+                NotifyFilters.DirectoryName |
+                NotifyFilters.Size |
+                NotifyFilters.LastAccess |
+                NotifyFilters.CreationTime |
+                NotifyFilters.Security |
+                NotifyFilters.LastWrite;
+            fsw.IncludeSubdirectories = true;
+            fsw.Filter = "*.*"; ; //감시할 파일 유형 선택 예) *.* 모든 파일 
+            fsw.Renamed += new RenamedEventHandler(Renamed);
+            fsw.Created += new FileSystemEventHandler(Created);
+            fsw.Changed += new FileSystemEventHandler(Changed);
+            fsw.Deleted += new FileSystemEventHandler(Deleted);
+
+            fsw.EnableRaisingEvents = true;
+        }
+
+        private void Created(object sender, FileSystemEventArgs e) { g_FSWLog = String.Format("{0} {1}",  e.ChangeType.ToString(), e.FullPath);  FileWatchLogWrite(g_FSWLog); }
+        private void Deleted(object sender, FileSystemEventArgs e) { g_FSWLog = String.Format("{0} {1}", e.ChangeType.ToString(), e.FullPath); FileWatchLogWrite(g_FSWLog); }
+        private void Changed(object source, FileSystemEventArgs e) { g_FSWLog = String.Format("{0} {1}", e.ChangeType.ToString(), e.FullPath); FileWatchLogWrite(g_FSWLog); }
+        private void Renamed(object source, RenamedEventArgs e) { g_FSWLog = String.Format("{0} {1}", e.ChangeType.ToString(), e.FullPath); FileWatchLogWrite(g_FSWLog); }
+
         private bool hasing(EvLogPara t_OldData, EvLogPara t_NewDate)
         {
             //if (t_OldData.GetHashCode() != t_NewDate.GetHashCode())
@@ -340,10 +368,48 @@ namespace SSEventLogService
                 return false;
         }
 
+        private void FileWatchLogWrite(string str)
+        {
+            string DirPath = @"C:\Users\" + g_UserName + @"\AppData\Roaming\EventLogView" + @"\FileWatchLog\" + DateTime.Today.ToString("yyyyMMdd");
+            string FilePath = DirPath + "\\EventLog_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+            string temp;
+            //string DirPath = @"C:\EventLog\SSEvent" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            //string FilePath = DirPath + "\\Log_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
+            //string temp;
+
+            DirectoryInfo di = new DirectoryInfo(DirPath);
+            FileInfo fi = new FileInfo(FilePath);
+            try
+            {
+                if (!di.Exists) Directory.CreateDirectory(DirPath);
+                if (!fi.Exists)
+                {
+                    using (StreamWriter sw = new StreamWriter(FilePath))
+                    {
+                        temp = string.Format("[{0}] {1}", DateTime.Now, str);
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(FilePath))
+                    {
+                        temp = string.Format("[{0}] {1}", DateTime.Now, str);
+                        sw.WriteLine(temp);
+                        sw.Close();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
         //로그 파일
         private void LogWrite(string str)
         {
-            string DirPath = @"C:\Users\" + UserName + @"\AppData\Roaming\EventLogView" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
+            string DirPath = @"C:\Users\" + g_UserName + @"\AppData\Roaming\EventLogView" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
             string FilePath = DirPath + "\\EventLog_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
             string temp;
             //string DirPath = @"C:\EventLog\SSEvent" + @"\Log\" + DateTime.Today.ToString("yyyyMMdd");
@@ -383,7 +449,7 @@ namespace SSEventLogService
         private void TrialMode()
         {
             LogWrite("TrialMode");
-            string DirPath = @"C:\Users\" + UserName + @"\AppData\Roaming\EventLogView" + @"\Option\";
+            string DirPath = @"C:\Users\" + g_UserName + @"\AppData\Roaming\EventLogView" + @"\Option\";
             string FilePath = DirPath + "\\SerialNumber.ini";
             string temp;
 
@@ -404,7 +470,7 @@ namespace SSEventLogService
                     }
                 }
                 var info = new FileInfo(FilePath);
-                TrialTime = info.CreationTime;
+                g_TrialTime = info.CreationTime;
             }
             catch (Exception e)
             {
