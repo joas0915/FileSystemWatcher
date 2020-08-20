@@ -33,7 +33,7 @@ namespace SSLogPusherViewer
             TrialMode();
 
             if (TrialCheck())
-                Environment.Exit(0);
+                Application.Exit();
 
             this.MaximizeBox = false;
             DB_ListView_Log.Clear();
@@ -313,6 +313,11 @@ namespace SSLogPusherViewer
                 sqlCon.Close();
                 Console.WriteLine(Error.Message);
             }
+        }
+
+        private void SSLogPusherViewer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

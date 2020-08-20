@@ -57,7 +57,7 @@
             this.DB_ListView_Log.HideSelection = false;
             this.DB_ListView_Log.Location = new System.Drawing.Point(12, 130);
             this.DB_ListView_Log.Name = "DB_ListView_Log";
-            this.DB_ListView_Log.Size = new System.Drawing.Size(1001, 477);
+            this.DB_ListView_Log.Size = new System.Drawing.Size(1000, 477);
             this.DB_ListView_Log.TabIndex = 0;
             this.DB_ListView_Log.UseCompatibleStateImageBehavior = false;
             // 
@@ -80,9 +80,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.Button_User);
             this.groupBox1.Controls.Add(this.TB_UserName);
             this.groupBox1.Location = new System.Drawing.Point(12, 71);
@@ -94,9 +92,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.Button_File);
             this.groupBox2.Controls.Add(this.TB_FileName);
             this.groupBox2.Location = new System.Drawing.Point(348, 71);
@@ -125,9 +121,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.Button_IPAddress);
             this.groupBox3.Controls.Add(this.TB_IPAddress);
             this.groupBox3.Location = new System.Drawing.Point(684, 71);
@@ -156,9 +150,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.Start_DateTime);
             this.groupBox4.Location = new System.Drawing.Point(12, 12);
             this.groupBox4.Name = "groupBox4";
@@ -181,9 +172,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox5.Controls.Add(this.End_DateTime);
             this.groupBox5.Location = new System.Drawing.Point(185, 12);
             this.groupBox5.Name = "groupBox5";
@@ -208,16 +197,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 634);
+            this.ClientSize = new System.Drawing.Size(1024, 634);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DB_ListView_Log);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SSLogPusherViewer";
             this.Text = "SSLogPusherViewer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SSLogPusherViewer_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
