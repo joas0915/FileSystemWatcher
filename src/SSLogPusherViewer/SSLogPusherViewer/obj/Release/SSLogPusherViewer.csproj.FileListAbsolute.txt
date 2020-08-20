@@ -1,0 +1,10 @@
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\Release\SSLogPusherViewer.SSLogPusherViewer.resources
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\Release\SSLogPusherViewer.csproj.GenerateResource.cache
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\Release\SSLogPusherViewer.csproj.CoreCompileInputs.cache
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\bin\AnyCPU\Release\SSLogPusherViewer.exe.config
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\bin\AnyCPU\Release\SSLogPusherViewer.exe
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\bin\AnyCPU\Release\SSLogPusherViewer.pdb
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\Release\SSLogPusherViewer.Properties.Resources.resources
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\Release\SSLogPusherViewer.exe
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\Release\SSLogPusherViewer.pdb
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\Release\SSLogPusherViewer.SSLogPusherLogin.resources

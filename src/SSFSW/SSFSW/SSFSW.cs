@@ -71,11 +71,8 @@ namespace SSFSW
         static DateTime TrialTime = new DateTime(0);
         static DateTime LimitTime = new DateTime(2020,08,27,00,00,00);
 
-        static string[] lines = null;
-
         static void InsertEventLog()
         {
-
             if (Triger)
             {
                 Console.WriteLine("Already On");
@@ -239,6 +236,31 @@ namespace SSFSW
 
         static void Main(string[] args)
         {
+            Console.WriteLine("ServiceStart");
+
+            Initialize();
+            Console.WriteLine("Intiialize Clear");
+
+            if (DateTime.Compare(TrialTime.AddDays(7), DateTime.Now) != 1)
+                return;
+            if (DateTime.Compare(LimitTime, DateTime.Now) != 1)
+                return;
+            
+            
+            LogWrite("Start");
+            Timer CycleTimer = new System.Timers.Timer();
+            //CycleTimer.Interval = 5 * 60 * 1000;
+            CycleTimer.Interval = 5000;
+            CycleTimer.Elapsed += new ElapsedEventHandler(timer_Elapsed); 
+            CycleTimer.Start();
+            FileWatch();
+
+            Console.Read();
+        }
+
+        static void FileCheck()
+        {
+            Console.WriteLine("FileCheck Clear");
             if (File.Exists(@"C:\SSEvent\EventLog\SSEvent.cfg"))
             {
                 try
@@ -246,9 +268,11 @@ namespace SSFSW
                     string[] lines = File.ReadAllLines(@"C:\SSEvent\EventLog\SSEvent.cfg");
                     g_FoldertoSearch = lines[0];
                     g_UserName = lines[1];
+                    Console.WriteLine("FileLoad Clear");
                 }
                 catch (Exception e2)
                 {
+                    Console.WriteLine("FileLoad Error_1");
                     using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
                     {
                         sw.WriteLine("필요한 파라메터가 없습니다.");
@@ -257,27 +281,20 @@ namespace SSFSW
                     }
                 }
             }
-
-            //Initialize();
-            //if (DateTime.Compare(TrialTime.AddDays(7), DateTime.Now) != 1)
-            //    return;
-            //if (DateTime.Compare(LimitTime, DateTime.Now) != 1)
-            //    return;
-            //
-            //Console.WriteLine("Start");
-            //LogWrite("Start");
-            //Timer CycleTimer = new System.Timers.Timer();
-            ////CycleTimer.Interval = 5 * 60 * 1000;
-            //CycleTimer.Interval = 5000;
-            //CycleTimer.Elapsed += new ElapsedEventHandler(timer_Elapsed); 
-            //CycleTimer.Start();
-            FileWatch();
-
-            Console.Read();
+            else
+            {
+                Console.WriteLine("FileLoad Error_2");
+                using (StreamWriter sw = new StreamWriter(@"C:\SSEvent\EventLog\Error.log"))
+                {
+                    sw.WriteLine("필요한 파일이 없습니다.");
+                    sw.Close();
+                }
+            }
         }
 
         static void Initialize()
         {
+            FileCheck();
             TrialMode();
             string[] LanguageTypeCheck_EN = { "Application Generated", "Certification Services", "Detailed File Share", "File Share", "File System", "Filtering Platform Connection", "Filtering Platform Packet Drop", "Handle Manipulation", "Kernel Object", "Other Object Access Events", "Registry ", "SAM", "Removable Storage" };
             string[] LanguageTypeCheck_KR = { "응용 프로그램 생성됨", "인증 서비스", "세부 파일 공유", "파일 공유", "파일 시스템", "필터링 플랫폼 연결", "필터링 플랫폼 패킷 삭제", "핸들 조작", "커널 개체", "기타 개체 액세스 이벤트", "레지스트리", "SAM", "이동식 저장소" };

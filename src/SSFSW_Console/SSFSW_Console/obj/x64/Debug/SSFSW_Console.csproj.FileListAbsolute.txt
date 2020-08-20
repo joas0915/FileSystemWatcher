@@ -1,0 +1,6 @@
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW_Console\SSFSW_Console\bin\x64\Debug\SSFSW_Console.exe
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW_Console\SSFSW_Console\bin\x64\Debug\SSFSW_Console.pdb
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW_Console\SSFSW_Console\obj\x64\Debug\SSFSW_Console.csproj.CoreCompileInputs.cache
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW_Console\SSFSW_Console\obj\x64\Debug\SSFSW_Console.exe
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW_Console\SSFSW_Console\obj\x64\Debug\SSFSW_Console.pdb
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW_Console\SSFSW_Console\obj\x64\Debug\SSFSW_Console.csprojAssemblyReference.cache

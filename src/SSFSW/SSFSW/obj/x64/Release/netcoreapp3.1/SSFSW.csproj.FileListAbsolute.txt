@@ -34,3 +34,4 @@ C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW\SSFSW\obj\x64\Release\
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW\SSFSW\obj\x64\Release\netcoreapp3.1\SSFSW.dll
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW\SSFSW\obj\x64\Release\netcoreapp3.1\SSFSW.pdb
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW\SSFSW\obj\x64\Release\netcoreapp3.1\SSFSW.genruntimeconfig.cache
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSFSW\SSFSW\obj\x64\Release\netcoreapp3.1\SSFSW.csprojAssemblyReference.cache

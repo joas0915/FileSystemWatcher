@@ -1,0 +1,6 @@
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherService\SSLogPusherService\obj\x64\Release\SSLogPusherService.csproj.CoreCompileInputs.cache
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherService\SSLogPusherService\bin\x64\Release\SSLogPusherService.exe.config
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherService\SSLogPusherService\bin\x64\Release\SSLogPusherService.exe
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherService\SSLogPusherService\bin\x64\Release\SSLogPusherService.pdb
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherService\SSLogPusherService\obj\x64\Release\SSLogPusherService.exe
+C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherService\SSLogPusherService\obj\x64\Release\SSLogPusherService.pdb
