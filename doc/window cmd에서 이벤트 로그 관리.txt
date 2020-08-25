@@ -1,0 +1,175 @@
+
+<cmd에서 Window Event Log 관리>
+
+1.사용법
+	wevtutil COMMAND [ARGUMENT [ARGUMENT] ...] [/OPTION:VALUE [/OPTION:VALUE] ...]
+	
+2.Command
+	el | enum-logs          로그 이름 나열
+	gl | get-log            로그 구성 정보 가져오기
+	sl | set-log            로그의 구성 수정
+	ep | enum-publishers    이벤트 게시자 나열
+	gp | get-publisher      게시자 구성 정보 가져오기
+	im | install-manifest   매니페스트에서 이벤트 게시자 및 로그를 설치
+	um | uninstall-manifest 매니페스트에서 이벤트 게시자 및 로그를 제거
+	qe | query-events       로그 또는 로그 파일에서 이벤트를 쿼리하기
+	gli | get-log-info      로그 상태 정보 가져오기
+	epl | export-log        로그 내보내기
+	al | archive-log        내보낸 로그 보관
+	cl | clear-log          로그 삭제
+	
+3.예시
+	1) 응용프로그램 이벤트 로그 설정 확인
+	c:\> wevtutil gl application
+
+	2) 시스템 이벤트 로그 설정 확인
+	c:\> wevtutil gl system
+
+	3) 보안 로그 설정 확인
+	c:\> wevtutil gl security
+
+	4) 응용프로그램 로그 최대 용량 설정 
+	c:\> wevtutil sl application /ms:157286400
+	
+4.설정 상세 옵션
+	짧은 버전(예: /e) 또는 긴 버전(예: /enable)의 옵션 이름을 사용할 수 있습니다.
+	옵션 및 해당 값은 대/소문자를 구분하지 않습니다.
+
+
+	/{e | enabled}:[true|false]
+	로그를 사용하거나 사용하지 않도록 설정한다.
+
+	/{q | quiet}:[true|false]
+	자동 표시 옵션입니다.
+	프롬프트 또는 메시지가 사용자에게 표시되지 않습니다.
+	지정하지 않으면 기본값은 true입니다.
+
+	/{fm | filemax}:<n>
+	이벤트를 유지할 전체 위치에서 최대 사용 수를 설정합니다.
+	여기서 <n>은 1에서 16 사이의 정수입니다.
+	각 사용에 대해 파일 하나를 만들므로 이 값이 2이면 마지막 두 사용에서 이벤트가 생성됩니다.
+	다시 부팅은 채널을 사용하지 않도록 설정했다가 다시 사용하도록 설정하므로 계산됩니다.
+	
+	/{i | isolation}:[system|application|custom]
+	로그 격리 모드입니다.
+	로그의 격리 모드는 로그가 동일한 격리 클래스에 있는 다른 로그와 세션을 공유하는지 여부를 결정합니다.
+	시스템 격리를 지정하면 대상 로그는 System 로그와 최소한의 쓰기 권한을 공유합니다.
+	응용 프로그램 격리를 지정하면 대상 로그는 Application 로그와 최소한의 쓰기 권한을 공유합니다.
+	사용자 지정 격리를 지정하면 /ca 옵션을 사용하여 보안 설명자도 제공해야 합니다.
+	
+	/{lfn | logfilename}:VALUE
+	로그 파일 이름입니다.
+	VALUE는 이벤트 로그 서비스에서 이 로그에 대한 이벤트를 저장하는 파일의 전체 경로입니다.
+
+	/{rt | retention}:[true|false]
+	로그 보존 모드입니다.
+	로그 보존 모드는 로그가 최대 크기에 도달할 경우 이벤트 로그 서비스의 동작을 결정합니다.
+	이벤트 로그가 최대 크기에 도달하는 경우 로그 보존 모드가 true이면 기존 이벤트는 보존되고 들어오는 이벤트는 삭제됩니다.
+	로그 보존 모드가 false이면 들어오는 이벤트가 로그의 가장 오래된 이벤트를 덮어씁니다.
+
+	/{ab | autobackup}:[true|false]
+	로그 자동 백업 정책입니다.
+	자동 백업이 true이면 로그가 최대 크기에 도달할 때 자동으로 백업됩니다.
+	또한 자동 백업이 true이면 보존(/rt 옵션으로 지정)도 true로 설정해야 합니다.
+
+	/{ms | maxsize}:<n>
+	로그의 최대 크기입니다.
+	여기서 <n>은 바이트 수입니다.
+	<n>의 최소값은 1048576(1024KB)이고,
+	로그 파일은 항상 64KB의 배수이므로 지정한 값은 그에 따라 반올림됩니다.
+
+	/{l | level}:<n>
+	로그의 수준 필터입니다.
+	여기서 <n>은 유효한 수준 값입니다.
+	전용 세션이 있는 로그에만 적용됩니다.
+	<n>을 0으로 설정하면 수준 필터를 제거할 수 있습니다.
+
+	/{k | keywords}:VALUE
+	로그의 키워드 필터입니다.
+	VALUE는 유효한 64비트 키워드 마스크가 될 수 있습니다.
+	전용세션이 있는 로그에만 적용됩니다.
+
+	/{ca | channelaccess}:VALUE
+	이벤트 로그에 대한 액세스 권한입니다.
+	VALUE는 SDDL(Security Descriptor Definition Language)을 사용하여 지정한 보안 설명자입니다.
+	MSDN (http://msdn.microsoft.com)에서 SDDL 형식에 대한 정보를 검색할 수 있습니다.
+
+	/{c | config}:VALUE
+	구성 파일의 경로입니다.
+	여기서 VALUE는 전체 파일 경로입니다.
+	지정하면 로그 속성을 이 구성 파일에서 읽습니다.
+	이 옵션을 지정하는 경우에는 <LOG_NAME> 명령줄 매개 변수를 지정하면 안 됩니다.
+	로그 이름은 구성 파일에서 읽습니다.
+	
+======================================================================================================
+======================================================================================================
+======================================================================================================
+
+<C# 이용하여 Windows Event Log 쓰기>
+	
+Window Event log 는 어플리케이션 에러나 중요한 이벤트를 저장할 장소로 아주 좋은곳이다.
+왜냐하면 모든 윈도우 이벤트는 같은 콘솔에서 쉽게 조회할수 있기때문이다.
+이것은 프로그램을 관리하는데 아주 편리한 이점이 있다. 왜냐하면 여러프로그램이 돌아가고있는 서버에서
+각 프로그램마다 로그를 확인하기 위해 여러 창을 열어 관리해야되는 불편함을 없애주기 때문이다.
+그리고 특정 어플리케이션이 로그양이 많아 따로 관리하고자 한다면 로그저장소를 따로 만들어서 관리할 수 있는 기능을 제공해준다.
+
+아래 소스는 어떻게 이벤트 로그를 윈도우에 저장하는지 보여주고 있다.
+
+
+static void Main(string[] args)
+{
+    WriteEventLogEntry("This is an entry in the event log by daveoncsharp.com");
+}
+
+private static void WriteEventLogEntry(string message)
+{
+    // Create an instance of EventLog
+    System.Diagnostics.EventLog eventLog = new System.Diagnostics.EventLog();
+
+    // Check if the event source exists. If not create it.
+    if (!System.Diagnostics.EventLog.SourceExists("TestApplication"))
+    {
+        System.Diagnostics.EventLog.CreateEventSource("TestApplication", "Application");
+    }
+
+    // Set the source name for writing log entries.
+    eventLog.Source = "TestApplication";
+
+    // Create an event ID to add to the event log
+    int eventID = 8;
+
+    // Write an entry to the event log.
+    eventLog.WriteEntry(message,
+                        System.Diagnostics.EventLogEntryType.Error,
+                        eventID);
+
+    // Close the Event Log
+    eventLog.Close();
+} 
+
+/*
+!소스 설명
+WriteEventLogEntry 함수에서 System.Diagnostics.EventLog 클래스 객체를 생성한다.
+EventLog.SourceExists 함수로 TestApplication 이벤트 소스가 레지스틀에 존재하는지에 대한 여부를 체크한다.
+만약 레지스트리에 등록되어있지 않다면 Application 이벤트 로그아래에 event source 생성하게 된다.
+
+다음은 소스 이름을 셋팅한 후 이벤트 아이디를 생성한다. 이 이벤트 아이디는 단지 이벤트 로그에 보여줄 숫자값이다.
+이것은 개발자가 어플리케이션 이벤트를 추적하기 위해서 허용하는 것이다.
+예를 들어 접속실패는 2, 파일을 찾지못한 에러일 때 3, 파일이 잠겼을 때 등을 번호로 붙여 관리하는것이다.
+그렇게 해놓으면 숫자만 보고도 쉽게 어떤 에러인지 파악할수 있게 되는것이다.
+마지막으로 상세메시지를 입력하고 WriteEntry 를 호출하면된다.
+*/
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+실행한 내용을 확인하기 위해서는 제어판 > 이벤트 뷰어 콘솔에서 할 수 있다.
+위에서 제시된 예제를 실행하게 되면 윈도우에서 기본적으로 제공하고 있는 Application(응용프로그램) 란에 이벤트 로그가 쌓이게 된다.
+System.Diagnostics.EventLog.CreateEventSource(“Application hang”, “MyLog”);
+처럼 두번째 파라미터에 Application 대신 MyLog 를 넣게 되면 새로운 범주가 생기게 되고
+첫번째 파라미터에는 기존에 존재하는 event source 외에 새로운 것을 넣어 실행한다.
+위에서 말했듯이 로그량이 많아 따로 관리하기를 원한다면 이런식으로 소스를 적용하면된다.
+	
+	
+	
+	
+	
+	

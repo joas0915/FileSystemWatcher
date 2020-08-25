@@ -8,4 +8,3 @@ C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPushe
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\x86\Release\SSLogPusherViewer.exe
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\x86\Release\SSLogPusherViewer.pdb
 C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\x86\Release\SSLogPusherViewer.SSLogPusherLogin.resources
-C:\Users\Lee\Documents\GitHub\FileSystemWatcher\src\SSLogPusherViewer\SSLogPusherViewer\obj\x86\Release\SSLogPusherViewer.csprojAssemblyReference.cache

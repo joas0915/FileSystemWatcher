@@ -289,23 +289,30 @@ namespace SSLogPusherService
         public void FileWatch()
         {
             ProcessLog("FSW Start");
+            try
+            {
+                FileSystemWatcher fsw = new FileSystemWatcher(g_FoldertoSearch);
+                fsw.NotifyFilter = NotifyFilters.FileName |
+                    NotifyFilters.DirectoryName |
+                    NotifyFilters.Size |
+                    NotifyFilters.LastAccess |
+                    NotifyFilters.CreationTime |
+                    NotifyFilters.Security |
+                    NotifyFilters.LastWrite;
+                fsw.IncludeSubdirectories = true;
+                fsw.Filter = "*.*"; ; //감시할 파일 유형 선택 예) *.* 모든 파일 
+                fsw.Renamed += new RenamedEventHandler(Renamed);
+                fsw.Created += new FileSystemEventHandler(Created);
+                fsw.Changed += new FileSystemEventHandler(Changed);
+                fsw.Deleted += new FileSystemEventHandler(Deleted);
 
-            FileSystemWatcher fsw = new FileSystemWatcher(g_FoldertoSearch);
-            fsw.NotifyFilter = NotifyFilters.FileName |
-                NotifyFilters.DirectoryName |
-                NotifyFilters.Size |
-                NotifyFilters.LastAccess |
-                NotifyFilters.CreationTime |
-                NotifyFilters.Security |
-                NotifyFilters.LastWrite;
-            fsw.IncludeSubdirectories = true;
-            fsw.Filter = "*.*"; ; //감시할 파일 유형 선택 예) *.* 모든 파일 
-            fsw.Renamed += new RenamedEventHandler(Renamed);
-            fsw.Created += new FileSystemEventHandler(Created);
-            fsw.Changed += new FileSystemEventHandler(Changed);
-            fsw.Deleted += new FileSystemEventHandler(Deleted);
-
-            fsw.EnableRaisingEvents = true;
+                fsw.EnableRaisingEvents = true;
+            }
+            catch(Exception e2)
+            {
+                ProcessLog("FSW Error : " +e2.Message);
+            }
+            
 
             ProcessLog("FSW Clear");
         }
@@ -386,17 +393,23 @@ namespace SSLogPusherService
         public bool TrialCheck()
         {
             ProcessLog("TrialCheck Start");
-
-            if (DateTime.Compare(g_TrialTime.AddDays(g_LimitDay), DateTime.Now) != 1)
+            try
             {
-                ProcessLog("기간이 만료되었습니다.");
-                return true;
+                if (DateTime.Compare(g_TrialTime.AddDays(g_LimitDay), DateTime.Now) != 1)
+                {
+                    ProcessLog("기간이 만료되었습니다.");
+                    return true;
+                }
+
+                if (DateTime.Compare(g_LimitTime, DateTime.Now) != 1)
+                {
+                    ProcessLog("기간이 만료되었습니다.");
+                    return true;
+                }
             }
-
-            if (DateTime.Compare(g_LimitTime, DateTime.Now) != 1)
+            catch(Exception e2)
             {
-                ProcessLog("기간이 만료되었습니다.");
-                return true;
+                ProcessLog("TrialCheck Error : "+ e2.Message);
             }
 
             ProcessLog("TrialCheck Clear");
