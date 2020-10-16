@@ -13,9 +13,9 @@ namespace SSLogPusherViewer
         private string ProcessLogPath = @"C:\SSLogPusher\PusherLog\ProcessLog.log";
 
         public DateTime g_TrialTime = new DateTime(0);
-        public DateTime g_LimitTime = new DateTime(2020, 09, 07, 23, 59, 00);
+        public DateTime g_LimitTime = new DateTime(2020, 09, 30, 23, 59, 00);
 
-        public int g_LimitDay = 15;
+        public int g_LimitDay = 40;
 
         public SSLogPusherViewer()
         {

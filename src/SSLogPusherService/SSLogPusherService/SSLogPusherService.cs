@@ -67,9 +67,9 @@ namespace SSLogPusherService
         private DateTime g_Ev_TC = new DateTime(0);
 
         public DateTime g_TrialTime = new DateTime(0);
-        public DateTime g_LimitTime = new DateTime(2020, 09, 07, 23, 59, 00);
-
-        public int g_LimitDay = 15;
+        public DateTime g_LimitTime = new DateTime(2020, 09, 30, 23, 59, 00);
+        
+        public int g_LimitDay = 40;
 
         public double g_Time_Interval = 5 * 60 * 1000;
 

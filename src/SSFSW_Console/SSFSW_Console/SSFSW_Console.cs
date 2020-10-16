@@ -63,8 +63,8 @@ namespace SSFSW_Console
         static public DateTime Ev_TC = new DateTime(0);
 
         static public DateTime g_TrialTime = new DateTime(0);
-        static public DateTime g_LimitTime = new DateTime(2020, 09, 07, 23, 59, 00);
-        static public int g_LimitDay = 15;
+        static public DateTime g_LimitTime = new DateTime(2020, 09, 30, 23, 59, 00);
+        static public int g_LimitDay = 40;
 
         static public double g_Time_Interval = 5000;
 
